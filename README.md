@@ -48,7 +48,7 @@ npm run dev
 
 - **Email**: tranchitho160704@gmail.com
 - **GitHub**: [trchitho](https://github.com/trchitho)
-- **Telegram**: [@trchitho](https://t.me/trchitho)
+
 
 ## License
 

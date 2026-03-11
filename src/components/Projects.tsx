@@ -23,7 +23,7 @@ const Projects = () => {
       title: "Portfolio",
       description: "A responsive portfolio website showcasing modern web development techniques and beautiful animations.",
       tech: ["React", "Framer Motion", "Tailwind CSS", "Vite"],
-      image: "https://i.ibb.co/3yB0TVDP/IMG-8810.png",
+      image: "/portflio.png",
       github: "https://github.com/trchitho/portfolio_website",
       live: "https://visage-vue-forge.vercel.app"
     }

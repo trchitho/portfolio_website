@@ -34,7 +34,11 @@ const Contact = () => {
             <p className="text-muted-foreground mb-4">
               Schedule a call to discuss your project requirements.
             </p>
-            <Button variant="hero" className="w-full">
+            <Button
+              variant="hero"
+              className="w-full"
+              onClick={() => window.open('https://calendly.com/tranchitho160704', '_blank')}
+            >
               Schedule a Call
             </Button>
           </div>
