@@ -28,7 +28,7 @@ const Projects = () => {
       tech: ["React", "Framer Motion", "Tailwind CSS", "Vite"],
       image: portfolioImg,
       github: "https://github.com/trchitho/portfolio_website",
-      live: "https://visage-vue-forge.vercel.app"
+      live: "#" // No demo link
     }
   ];
 

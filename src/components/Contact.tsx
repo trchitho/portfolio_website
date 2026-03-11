@@ -28,7 +28,11 @@ const Contact = () => {
               <p className="text-muted-foreground mb-4">
                 Drop me a line and I'll get back to you within 24 hours.
               </p>
-              <Button variant="outline" className="w-full">
+              <Button
+                variant="outline"
+                className="w-full"
+                onClick={() => window.open('mailto:tranchitho160704@gmail.com', '_blank')}
+              >
                 tranchitho160704@gmail.com
               </Button>
             </div>
