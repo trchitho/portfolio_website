@@ -1,5 +1,8 @@
 import { Button } from "@/components/ui/enhanced-button";
 import { ExternalLink, Github } from "lucide-react";
+import fullstackChatImg from "@/assets/images/fullstack-chatapp.png";
+import aiCareerImg from "@/assets/images/ai-career-system.png";
+import portfolioImg from "@/assets/images/portfolio.png";
 
 const Projects = () => {
   const projects = [
@@ -7,7 +10,7 @@ const Projects = () => {
       title: "FullStack-Chat-App",
       description: "A full-stack real-time chat application built with the MERN stack (MongoDB, Express, React, Node.js) and Socket.IO, designed to deliver a secure and dynamic messaging experience with a modern, responsive UI.",
       tech: ["React", "Tailwind CSS", "DaisyUI", "Zustand", "Axios", "React Hot Toast", "Socket.IO Client", "Node.js", "Express.js", "MongoDB", "Mongoose", "JWT", "Bcrypt", "Cloudinary"],
-      image: "/fullstack-chatapp.png",
+      image: fullstackChatImg,
       github: "https://github.com/trchitho/FullStack-Chat-App",
       live: "#" // Chưa có demo
     },
@@ -15,7 +18,7 @@ const Projects = () => {
       title: "AI-Based Career Recommendation System",
       description: "The personalized career tips system uses artificial intelligence and is built on a monorepo architecture with a frontend (React/Vite) and a backend (FastAPI).",
       tech: ["React 18", "Vite", "Tailwind CSS", "React Router", "Axios", "FastAPI", "SQLAlchemy", "PostgreSQL", "pgvector", "JWT Authentication"],
-      image: "/ai-career-system.png",
+      image: aiCareerImg,
       github: "https://github.com/trchitho/AI-Based-Career-Recommendation-System",
       live: "#" // Chưa có demo
     },
@@ -23,7 +26,7 @@ const Projects = () => {
       title: "Portfolio",
       description: "A responsive portfolio website showcasing modern web development techniques and beautiful animations.",
       tech: ["React", "Framer Motion", "Tailwind CSS", "Vite"],
-      image: "/portflio.png",
+      image: portfolioImg,
       github: "https://github.com/trchitho/portfolio_website",
       live: "https://visage-vue-forge.vercel.app"
     }
