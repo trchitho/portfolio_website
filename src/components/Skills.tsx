@@ -5,7 +5,7 @@ const Skills = () => {
     {
       icon: Code,
       title: "Frontend Development",
-      skills: ["React", "TypeScript", "HTML/CSS", "Vue.js", "JavaScript ES6+"],
+      skills: ["React", "TypeScript", "HTML/CSS", "JavaScript ES6+"],
       color: "from-blue-400 to-blue-600"
     },
     {
