@@ -2,29 +2,28 @@ import React, { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Html, OrbitControls, Sphere } from '@react-three/drei';
 import * as THREE from 'three';
-import javascriptIcon from '@/assets/icons/javascript.svg';
-import typescriptIcon from '@/assets/icons/typescript.svg';
-import reactIcon from '@/assets/icons/react.svg';
-import pythonIcon from '@/assets/icons/python.svg';
 import javaIcon from '@/assets/icons/java.svg';
-import cplusplusIcon from '@/assets/icons/cplusplus.svg';
+import springIcon from '@/assets/icons/spring.svg';
+import reactIcon from '@/assets/icons/react.svg';
+import typescriptIcon from '@/assets/icons/typescript.svg';
+import javascriptIcon from '@/assets/icons/javascript.svg';
 import html5Icon from '@/assets/icons/html5.svg';
 import css3Icon from '@/assets/icons/css3.svg';
+import dockerIcon from '@/assets/icons/docker.svg';
+import mysqlIcon from '@/assets/icons/mysql.svg';
 import nodejsIcon from '@/assets/icons/nodejs.svg';
-import vuejsIcon from '@/assets/icons/vuejs.svg';
-import angularIcon from '@/assets/icons/angular.svg';
-import phpIcon from '@/assets/icons/php.svg';
+
 const heroLanguages = [
-  { name: 'JavaScript', icon: javascriptIcon },
-  { name: 'TypeScript', icon: typescriptIcon },
-  { name: 'React', icon: reactIcon },
-  { name: 'Python', icon: pythonIcon },
   { name: 'Java', icon: javaIcon },
+  { name: 'Spring Boot', icon: springIcon },
+  { name: 'React', icon: reactIcon },
+  { name: 'TypeScript', icon: typescriptIcon },
+  { name: 'JavaScript', icon: javascriptIcon },
   { name: 'HTML5', icon: html5Icon },
   { name: 'CSS3', icon: css3Icon },
+  { name: 'Docker', icon: dockerIcon },
+  { name: 'MySQL', icon: mysqlIcon },
   { name: 'Node.js', icon: nodejsIcon },
-  { name: 'Vue.js', icon: vuejsIcon },
-  { name: 'Angular', icon: angularIcon },
 ];
 
 interface LanguageIconProps {

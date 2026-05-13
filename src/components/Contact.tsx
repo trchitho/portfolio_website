@@ -12,21 +12,21 @@ const Contact = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Let's <span className="bg-gradient-primary bg-clip-text text-transparent">Connect</span>
+              Liên <span className="bg-gradient-primary bg-clip-text text-transparent">Hệ</span>
             </h2>
             <div className="w-20 h-1 bg-gradient-primary rounded-full mx-auto mb-6" />
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              I'm always interested in new opportunities and exciting projects.
-              Let's discuss how we can work together to create something amazing.
+              Tôi luôn sẵn sàng cho các cơ hội mới và những dự án thú vị.
+              Hãy liên hệ để chúng ta cùng thảo luận và hợp tác nhé!
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-glass border border-glass rounded-2xl p-8 backdrop-blur-sm hover:border-primary/50 transition-all duration-300">
               <Mail className="h-8 w-8 text-primary mx-auto mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Email Me</h3>
+              <h3 className="text-lg font-semibold mb-2">Gửi Email</h3>
               <p className="text-muted-foreground mb-4">
-                Drop me a line and I'll get back to you within 24 hours.
+                Gửi email cho tôi, tôi sẽ phản hồi trong vòng 24 giờ.
               </p>
               <Button
                 variant="outline"
@@ -39,9 +39,9 @@ const Contact = () => {
 
             <div className="bg-glass border border-glass rounded-2xl p-8 backdrop-blur-sm hover:border-primary/50 transition-all duration-300">
               <MessageSquare className="h-8 w-8 text-primary mx-auto mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Let's Chat</h3>
+              <h3 className="text-lg font-semibold mb-2">Trò chuyện</h3>
               <p className="text-muted-foreground mb-4">
-                Schedule a call to discuss your project requirements.
+                Đặt lịch gọi để thảo luận về yêu cầu dự án của bạn.
               </p>
               <Button
                 variant="hero"
