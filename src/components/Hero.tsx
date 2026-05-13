@@ -33,7 +33,7 @@ const Hero = () => {
 
             <p className="text-base md:text-lg lg:text-xl text-muted-foreground mb-8 max-w-sm md:max-w-xl lg:max-w-2xl mx-auto lg:mx-0 leading-relaxed px-2 lg:px-0">
               <TypewriterText
-                text="Tôi xây dựng các ứng dụng web hiệu suất cao với công nghệ hiện đại. Chuyên về Java, Spring Boot, React và phát triển giải pháp fullstack từ backend đến frontend."
+                text="I build high-performance web applications with modern technologies. Specializing in Java, Spring Boot, React, and delivering fullstack solutions from backend to frontend."
                 speed={30}
               />
             </p>

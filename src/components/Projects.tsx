@@ -8,7 +8,7 @@ const Projects = () => {
   const projects = [
     {
       title: "FullStack Chat Application",
-      description: "Ứng dụng chat real-time fullstack sử dụng MERN stack (MongoDB, Express, React, Node.js) và Socket.IO. Hỗ trợ nhắn tin tức thời, xác thực JWT, upload ảnh qua Cloudinary với giao diện responsive hiện đại.",
+      description: "A full-stack real-time chat application using MERN stack (MongoDB, Express, React, Node.js) and Socket.IO. Features instant messaging, JWT authentication, image upload via Cloudinary with a modern responsive UI.",
       tech: ["React", "Tailwind CSS", "Socket.IO", "Node.js", "Express.js", "MongoDB", "JWT", "Cloudinary"],
       image: fullstackChatImg,
       github: "https://github.com/trchitho/FullStack-Chat-App",
@@ -16,7 +16,7 @@ const Projects = () => {
     },
     {
       title: "AI-Based Career Recommendation System",
-      description: "Hệ thống gợi ý nghề nghiệp cá nhân hóa sử dụng AI, xây dựng trên kiến trúc monorepo với frontend (React/Vite) và backend (FastAPI). Tích hợp PostgreSQL với pgvector cho tìm kiếm vector similarity.",
+      description: "A personalized career recommendation system powered by AI, built on a monorepo architecture with frontend (React/Vite) and backend (FastAPI). Integrates PostgreSQL with pgvector for vector similarity search.",
       tech: ["React 18", "Vite", "Tailwind CSS", "FastAPI", "PostgreSQL", "pgvector", "JWT", "SQLAlchemy"],
       image: aiCareerImg,
       github: "https://github.com/trchitho/AI-Based-Career-Recommendation-System",
@@ -24,7 +24,7 @@ const Projects = () => {
     },
     {
       title: "Portfolio Website",
-      description: "Website portfolio cá nhân responsive với hiệu ứng animation mượt mà, thiết kế hiện đại sử dụng React và Tailwind CSS.",
+      description: "A responsive personal portfolio website with smooth animations and modern design using React and Tailwind CSS.",
       tech: ["React", "TypeScript", "Tailwind CSS", "Vite"],
       image: portfolioImg,
       github: "https://github.com/trchitho/portfolio_website",
@@ -37,7 +37,7 @@ const Projects = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Dự Án <span className="bg-gradient-primary bg-clip-text text-transparent">Nổi Bật</span>
+            Featured <span className="bg-gradient-primary bg-clip-text text-transparent">Projects</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-primary rounded-full mx-auto" />
         </div>

@@ -79,7 +79,7 @@ const Skills = () => {
     },
     {
       icon: Languages,
-      title: "Ngôn ngữ",
+      title: "Languages",
       skills: [
         { name: "English – TOEIC 700+", highlight: false },
       ],
@@ -93,7 +93,7 @@ const Skills = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Kỹ <span className="bg-gradient-primary bg-clip-text text-transparent">Năng</span>
+            My <span className="bg-gradient-primary bg-clip-text text-transparent">Skills</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-primary rounded-full mx-auto" />
         </div>
@@ -108,7 +108,7 @@ const Skills = () => {
                 className="bg-glass border-2 border-primary/50 rounded-2xl p-8 backdrop-blur-sm hover:border-primary transition-all duration-300 hover:shadow-glow group relative overflow-hidden"
               >
                 <div className="absolute top-3 right-3 px-3 py-1 bg-primary/20 border border-primary/40 rounded-full text-xs font-semibold text-primary">
-                  ⭐ Chuyên môn chính
+                  ⭐ Core Expertise
                 </div>
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-14 h-14 bg-gradient-primary rounded-xl flex items-center justify-center group-hover:shadow-glow transition-all duration-300">
@@ -161,11 +161,11 @@ const Skills = () => {
                     </div>
                   ))}
 
-                  {/* Thêm mô tả cho phần Ngôn ngữ */}
-                  {category.title === "Ngôn ngữ" && (
+                  {/* Language description */}
+                  {category.title === "Languages" && (
                     <p className="text-xs text-muted-foreground mt-3 leading-relaxed px-1">
-                      Đọc hiểu tài liệu kỹ thuật, giao tiếp cơ bản trong môi trường làm việc, 
-                      và hiểu các yêu cầu phát triển phần mềm bằng tiếng Anh.
+                      Able to read technical documents, communicate in basic workplace situations, 
+                      and understand common software development requirements in English.
                     </p>
                   )}
                 </div>

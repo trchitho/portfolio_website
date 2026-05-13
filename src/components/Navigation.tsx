@@ -24,10 +24,10 @@ const Navigation = () => {
   };
 
   const navItems = [
-    { label: "Về tôi", id: "about" },
-    { label: "Kỹ năng", id: "skills" },
-    { label: "Dự án", id: "projects" },
-    { label: "Liên hệ", id: "contact" }
+    { label: "About", id: "about" },
+    { label: "Skills", id: "skills" },
+    { label: "Projects", id: "projects" },
+    { label: "Contact", id: "contact" }
   ];
 
   return (
@@ -54,7 +54,7 @@ const Navigation = () => {
               </button>
             ))}
             <Button variant="hero" size="sm">
-              Hồ sơ
+              Resume
             </Button>
           </div>
 
@@ -84,7 +84,7 @@ const Navigation = () => {
               ))}
               <div className="pt-2 border-t border-glass">
                 <Button variant="hero" size="sm" className="w-full">
-                  Hồ sơ
+                  Resume
                 </Button>
               </div>
             </div>
