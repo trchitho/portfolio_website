@@ -4,7 +4,7 @@ const About = () => {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            About <span className="bg-gradient-primary bg-clip-text text-transparent">Me</span>
+            Về <span className="bg-gradient-primary bg-clip-text text-transparent">Tôi</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-primary rounded-full mx-auto" />
         </div>
@@ -12,48 +12,55 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I'm a passionate fullstack developer with 1+ years of experience creating
-              end-to-end digital solutions that users love. I specialize in modern web technologies
-              from frontend to backend and have a keen eye for design and user experience.
+              Tôi là một Junior Java Fullstack Developer đam mê với hơn 1 năm kinh nghiệm
+              xây dựng các ứng dụng web end-to-end. Chuyên về Java/Spring Boot ở backend
+              và React ở frontend, tôi luôn hướng đến việc viết code sạch, hiệu quả và dễ bảo trì.
             </p>
 
             <p className="text-lg text-muted-foreground leading-relaxed">
-              When I'm not coding, you can find me exploring new technologies, contributing
-              to open source projects, or sharing knowledge with the developer community.
+              Khi không code, bạn có thể thấy tôi đang tìm hiểu các design pattern mới,
+              nghiên cứu kiến trúc microservices, hoặc chia sẻ kiến thức với cộng đồng developer.
             </p>
 
             <div className="flex flex-wrap gap-3">
               <span className="px-3 py-1 bg-glass border border-glass rounded-full text-sm backdrop-blur-sm">
-                Problem Solver
+                Tư duy logic
               </span>
               <span className="px-3 py-1 bg-glass border border-glass rounded-full text-sm backdrop-blur-sm">
-                Team Player
+                Làm việc nhóm
               </span>
               <span className="px-3 py-1 bg-glass border border-glass rounded-full text-sm backdrop-blur-sm">
-                Continuous Learner
+                Học hỏi không ngừng
+              </span>
+              <span className="px-3 py-1 bg-glass border border-glass rounded-full text-sm backdrop-blur-sm">
+                Giải quyết vấn đề
               </span>
             </div>
           </div>
 
           <div className="relative">
             <div className="bg-gradient-secondary p-8 rounded-2xl border border-glass backdrop-blur-sm">
-              <h3 className="text-xl font-semibold mb-4">Quick Facts</h3>
+              <h3 className="text-xl font-semibold mb-4">Thông tin nhanh</h3>
               <div className="space-y-3">
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Experience</span>
-                  <span className="font-medium">1+ Years</span>
+                  <span className="text-muted-foreground">Kinh nghiệm</span>
+                  <span className="font-medium">1+ Năm</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Projects</span>
-                  <span className="font-medium">5+ Completed</span>
+                  <span className="text-muted-foreground">Chuyên môn</span>
+                  <span className="font-medium">Java / Spring Boot</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Location</span>
-                  <span className="font-medium">Danang, VietNam</span>
+                  <span className="text-muted-foreground">Dự án</span>
+                  <span className="font-medium">5+ Hoàn thành</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Availability</span>
-                  <span className="font-medium text-accent">Available</span>
+                  <span className="text-muted-foreground">Vị trí</span>
+                  <span className="font-medium">Đà Nẵng, Việt Nam</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Trạng thái</span>
+                  <span className="font-medium text-accent">Sẵn sàng nhận việc</span>
                 </div>
               </div>
             </div>
