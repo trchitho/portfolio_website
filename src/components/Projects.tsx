@@ -3,9 +3,18 @@ import { ExternalLink, Github } from "lucide-react";
 import fullstackChatImg from "@/assets/images/fullstack-chatapp.png";
 import aiCareerImg from "@/assets/images/ai-career-system.png";
 import portfolioImg from "@/assets/images/portfolio.png";
+import foodhubImg from "@/assets/images/foodhub.png";
 
 const Projects = () => {
   const projects = [
+    {
+      title: "FoodHub – Online Food Delivery Marketplace",
+      description: "A full-stack food delivery platform built with Spring Boot and React. Features JWT authentication, role-based access control (Admin/User), restaurant & menu management, order tracking, and Redis caching for performance.",
+      tech: ["Java 21", "Spring Boot", "Spring Security", "JPA/Hibernate", "MySQL", "Redis", "JWT", "React", "Tailwind CSS", "Axios"],
+      image: foodhubImg,
+      github: "https://github.com/trchitho/Food-Delivery-Project",
+      live: "#"
+    },
     {
       title: "FullStack Chat Application",
       description: "A full-stack real-time chat application using MERN stack (MongoDB, Express, React, Node.js) and Socket.IO. Features instant messaging, JWT authentication, image upload via Cloudinary with a modern responsive UI.",
