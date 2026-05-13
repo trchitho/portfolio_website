@@ -7,25 +7,25 @@ import portfolioImg from "@/assets/images/portfolio.png";
 const Projects = () => {
   const projects = [
     {
-      title: "FullStack-Chat-App",
-      description: "A full-stack real-time chat application built with the MERN stack (MongoDB, Express, React, Node.js) and Socket.IO, designed to deliver a secure and dynamic messaging experience with a modern, responsive UI.",
-      tech: ["React", "Tailwind CSS", "DaisyUI", "Zustand", "Axios", "React Hot Toast", "Socket.IO Client", "Node.js", "Express.js", "MongoDB", "Mongoose", "JWT", "Bcrypt", "Cloudinary"],
+      title: "FullStack Chat Application",
+      description: "Ứng dụng chat real-time fullstack sử dụng MERN stack (MongoDB, Express, React, Node.js) và Socket.IO. Hỗ trợ nhắn tin tức thời, xác thực JWT, upload ảnh qua Cloudinary với giao diện responsive hiện đại.",
+      tech: ["React", "Tailwind CSS", "Socket.IO", "Node.js", "Express.js", "MongoDB", "JWT", "Cloudinary"],
       image: fullstackChatImg,
       github: "https://github.com/trchitho/FullStack-Chat-App",
-      live: "#" // Chưa có demo
+      live: "#"
     },
     {
       title: "AI-Based Career Recommendation System",
-      description: "The personalized career tips system uses artificial intelligence and is built on a monorepo architecture with a frontend (React/Vite) and a backend (FastAPI).",
-      tech: ["React 18", "Vite", "Tailwind CSS", "React Router", "Axios", "FastAPI", "SQLAlchemy", "PostgreSQL", "pgvector", "JWT Authentication"],
+      description: "Hệ thống gợi ý nghề nghiệp cá nhân hóa sử dụng AI, xây dựng trên kiến trúc monorepo với frontend (React/Vite) và backend (FastAPI). Tích hợp PostgreSQL với pgvector cho tìm kiếm vector similarity.",
+      tech: ["React 18", "Vite", "Tailwind CSS", "FastAPI", "PostgreSQL", "pgvector", "JWT", "SQLAlchemy"],
       image: aiCareerImg,
       github: "https://github.com/trchitho/AI-Based-Career-Recommendation-System",
-      live: "#" // Chưa có demo
+      live: "#"
     },
     {
-      title: "Portfolio",
-      description: "A responsive portfolio website showcasing modern web development techniques and beautiful animations.",
-      tech: ["React", "Framer Motion", "Tailwind CSS", "Vite"],
+      title: "Portfolio Website",
+      description: "Website portfolio cá nhân responsive với hiệu ứng animation mượt mà, thiết kế hiện đại sử dụng React và Tailwind CSS.",
+      tech: ["React", "TypeScript", "Tailwind CSS", "Vite"],
       image: portfolioImg,
       github: "https://github.com/trchitho/portfolio_website",
       live: "https://portfolio-website-five-gamma-53.vercel.app/"
@@ -37,7 +37,7 @@ const Projects = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Featured <span className="bg-gradient-primary bg-clip-text text-transparent">Projects</span>
+            Dự Án <span className="bg-gradient-primary bg-clip-text text-transparent">Nổi Bật</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-primary rounded-full mx-auto" />
         </div>
