@@ -23,7 +23,7 @@ const Hero = () => {
           <div className="text-center lg:text-left order-2 lg:order-1">
             <div className="mb-6">
               <span className="inline-block px-4 py-2 bg-glass border border-glass rounded-full text-sm font-medium text-muted-foreground backdrop-blur-sm">
-                Fullstack Developer
+                Junior Java Fullstack Developer
               </span>
             </div>
 
@@ -33,7 +33,7 @@ const Hero = () => {
 
             <p className="text-base md:text-lg lg:text-xl text-muted-foreground mb-8 max-w-sm md:max-w-xl lg:max-w-2xl mx-auto lg:mx-0 leading-relaxed px-2 lg:px-0">
               <TypewriterText
-                text="I craft beautiful, performant web applications with modern technologies. Specializing in React, Node.js, TypeScript, and creating full-stack solutions from frontend to backend."
+                text="Tôi xây dựng các ứng dụng web hiệu suất cao với công nghệ hiện đại. Chuyên về Java, Spring Boot, React và phát triển giải pháp fullstack từ backend đến frontend."
                 speed={30}
               />
             </p>
