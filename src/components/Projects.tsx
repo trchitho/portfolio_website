@@ -13,7 +13,7 @@ const Projects = () => {
       tech: ["Java 21", "Spring Boot", "Spring Security", "JPA/Hibernate", "MySQL", "Redis", "JWT", "React", "Tailwind CSS", "Axios"],
       image: foodhubImg,
       github: "https://github.com/trchitho/Food-Delivery-Project",
-      live: "#"
+      live: "https://food-delivery-project-chi-six.vercel.app/"
     },
     {
       title: "FullStack Chat Application",
