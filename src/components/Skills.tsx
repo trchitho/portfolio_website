@@ -81,7 +81,7 @@ const Skills = () => {
       icon: Languages,
       title: "Languages",
       skills: [
-        { name: "English – TOEIC 700+", highlight: false },
+        { name: "English – B1 (CEFR)", highlight: false },
       ],
       color: "from-cyan-400 to-cyan-600",
       featured: false
@@ -164,8 +164,8 @@ const Skills = () => {
                   {/* Language description */}
                   {category.title === "Languages" && (
                     <p className="text-xs text-muted-foreground mt-3 leading-relaxed px-1">
-                      Able to read technical documents, communicate in basic workplace situations, 
-                      and understand common software development requirements in English.
+                      Able to communicate in routine work situations and understand basic
+                      technical documents.
                     </p>
                   )}
                 </div>

@@ -12,9 +12,9 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I'm a passionate Junior Java Fullstack Developer with 1+ years of experience
-              building end-to-end web applications. Specializing in Java/Spring Boot on the backend
-              and React on the frontend, I always strive to write clean, efficient, and maintainable code.
+              I'm an Intern/Fresher Fullstack Developer focused on building end-to-end web
+              applications. Specializing in Java/Spring Boot on the backend and React on the
+              frontend, I always strive to write clean, efficient, and maintainable code.
             </p>
 
             <p className="text-lg text-muted-foreground leading-relaxed">
