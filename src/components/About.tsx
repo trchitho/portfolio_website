@@ -44,7 +44,7 @@ const About = () => {
               <div className="space-y-3">
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Experience</span>
-                  <span className="font-medium">1+ Years</span>
+                  <span className="font-medium">Academic & Personal Projects</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Specialty</span>
