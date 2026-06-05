@@ -8,63 +8,66 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Portfolio Dark Theme Design System */
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+    /* ── Portfolio Light Theme Design System ───────────────────── */
 
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
+    /* Base surfaces */
+    --background: 220 20% 97%;        /* #F5F6FA — cool off-white, not stark */
+    --foreground: 224 24% 10%;        /* #131720 — near-black, 16:1 on bg    */
 
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
+    --card: 0 0% 100%;                /* pure white cards                    */
+    --card-foreground: 224 24% 10%;
 
-    /* Primary gradient purple-blue */
-    --primary: 250 84% 60%;
-    --primary-foreground: 0 0% 98%;
-    --primary-glow: 250 84% 70%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 24% 10%;
 
-    /* Secondary glass effect */
-    --secondary: 240 9% 9%;
-    --secondary-foreground: 0 0% 90%;
+    /* Primary — violet-indigo, 4.5:1+ on white */
+    --primary: 250 70% 50%;           /* #5B3FD9                             */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 250 70% 60%;
 
-    --muted: 240 5% 15%;
-    --muted-foreground: 240 5% 65%;
+    /* Secondary — light lavender tint surfaces */
+    --secondary: 240 20% 94%;         /* #EEEDF7                             */
+    --secondary-foreground: 224 24% 18%;
 
-    /* Accent vibrant purple */
-    --accent: 270 95% 75%;
-    --accent-foreground: 240 10% 3.9%;
+    /* Muted */
+    --muted: 220 14% 92%;             /* #E8EAF0                             */
+    --muted-foreground: 220 12% 40%;  /* #5A6072 — passes 4.5:1 on white     */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    /* Accent — brighter violet for highlights */
+    --accent: 262 80% 56%;            /* #7C3AED                             */
+    --accent-foreground: 0 0% 100%;
 
-    --border: 240 6% 18%;
-    --input: 240 6% 18%;
-    --ring: 250 84% 60%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 18% 87%;            /* #D6D9E4 — visible but subtle        */
+    --input: 220 18% 87%;
+    --ring: 250 70% 50%;
 
     --radius: 0.75rem;
 
-    /* Custom portfolio tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(250 84% 60%), hsl(270 95% 75%));
-    --gradient-secondary: linear-gradient(135deg, hsl(240 9% 9%), hsl(240 6% 12%));
-    --gradient-hero: linear-gradient(135deg, hsl(240 10% 3.9%), hsl(250 20% 8%));
-    
-    --glass-bg: hsla(240, 9%, 9%, 0.7);
-    --glass-border: hsla(250, 84%, 60%, 0.2);
-    
-    --shadow-glow: 0 0 40px hsla(250, 84%, 60%, 0.3);
-    --shadow-card: 0 10px 30px -10px hsla(0, 0%, 0%, 0.5);
-    
+    /* ── Custom portfolio tokens ─────────────────────────────── */
+    --gradient-primary: linear-gradient(135deg, hsl(250 70% 50%), hsl(262 80% 56%));
+    --gradient-secondary: linear-gradient(135deg, hsl(240 20% 94%), hsl(220 20% 97%));
+    --gradient-hero: linear-gradient(160deg, hsl(220 30% 96%) 0%, hsl(250 30% 93%) 50%, hsl(262 30% 95%) 100%);
+
+    --glass-bg: hsla(0, 0%, 100%, 0.75);
+    --glass-border: hsla(250, 60%, 50%, 0.15);
+
+    --shadow-glow: 0 0 40px hsla(250, 70%, 50%, 0.18);
+    --shadow-card: 0 4px 24px -6px hsla(220, 30%, 20%, 0.10), 0 1px 4px hsla(220, 30%, 20%, 0.06);
+
     --animation-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
     --animation-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 
-    --sidebar-background: 240 10% 3.9%;
-    --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 250 84% 60%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 9% 9%;
-    --sidebar-accent-foreground: 0 0% 90%;
-    --sidebar-border: 240 6% 18%;
-    --sidebar-ring: 250 84% 60%;
+    --sidebar-background: 220 20% 97%;
+    --sidebar-foreground: 224 24% 10%;
+    --sidebar-primary: 250 70% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 20% 94%;
+    --sidebar-accent-foreground: 224 24% 18%;
+    --sidebar-border: 220 18% 87%;
+    --sidebar-ring: 250 70% 50%;
   }
 }
 

@@ -51,18 +51,19 @@ const LanguageIcon: React.FC<LanguageIconProps> = ({ position, language, index }
         transform
         sprite
         style={{
-          width: '32px',
-          height: '32px',
+          width: '36px',
+          height: '36px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'rgba(0, 0, 0, 0.7)',
-          borderRadius: '8px',
-          border: '1px solid rgba(139, 92, 246, 0.3)',
-          backdropFilter: 'blur(4px)',
-          padding: '4px',
+          background: 'rgba(255, 255, 255, 0.88)',
+          borderRadius: '10px',
+          border: '1px solid rgba(91, 63, 217, 0.22)',
+          backdropFilter: 'blur(8px)',
+          padding: '5px',
           userSelect: 'none',
           pointerEvents: 'none',
+          boxShadow: '0 2px 8px rgba(91, 63, 217, 0.10)',
         }}
       >
         <img 
@@ -120,10 +121,10 @@ const HeroSphere: React.FC = () => {
       {/* Wireframe sphere */}
       <Sphere args={[2, 12, 12]}>
         <meshBasicMaterial
-          color="hsl(250, 84%, 60%)"
+          color="hsl(250, 70%, 52%)"
           wireframe
           transparent
-          opacity={0.15}
+          opacity={0.18}
         />
       </Sphere>
       
