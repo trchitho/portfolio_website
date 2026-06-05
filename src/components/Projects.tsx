@@ -14,7 +14,7 @@ const PROJECTS = [
     tech: ["Java 21", "Spring Boot", "Spring Security", "MySQL", "Redis", "React", "Tailwind CSS"],
     image: foodhubImg,
     github: "https://github.com/trchitho/Food-Delivery-Project",
-    live: "https://food-delivery-project-chi-six.vercel.app/",
+    live: "https://trchitho.github.io/Food-Delivery-Project/",
     accentHue: 250,
     badge: "Full Stack",
   },
@@ -25,7 +25,7 @@ const PROJECTS = [
     tech: ["React", "Socket.IO", "Node.js", "Express.js", "MongoDB", "Cloudinary", "JWT"],
     image: fullstackChatImg,
     github: "https://github.com/trchitho/FullStack-Chat-App",
-    live: null,
+    live: "https://trchitho.github.io/FullStack-Chat-App/",
     accentHue: 262,
     badge: "Real-time",
   },
@@ -36,7 +36,7 @@ const PROJECTS = [
     tech: ["React 18", "Vite", "FastAPI", "PostgreSQL", "pgvector", "JWT", "SQLAlchemy"],
     image: aiCareerImg,
     github: "https://github.com/trchitho/AI-Based-Career-Recommendation-System",
-    live: null,
+    live: "https://trchitho.github.io/AI-Based-Career-Recommendation-System/",
     accentHue: 220,
     badge: "AI / ML",
   },
@@ -47,7 +47,7 @@ const PROJECTS = [
     tech: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     image: portfolioImg,
     github: "https://github.com/trchitho/portfolio_website",
-    live: "https://portfolio-website-five-gamma-53.vercel.app/",
+    live: "https://trchitho.github.io/portfolio_website/",
     accentHue: 240,
     badge: "Portfolio",
   },
@@ -57,10 +57,16 @@ const ProjectCard = ({ project, index }: { project: typeof PROJECTS[number]; ind
   const { ref, isVisible } = useScrollReveal<HTMLDivElement>({ threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
   const [hovered, setHovered] = useState(false);
   const h = project.accentHue;
+  const openProject = () => {
+    window.open(project.live, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <div
       ref={ref}
+      role="link"
+      tabIndex={0}
+      aria-label={`Open ${project.title} on GitHub Pages`}
       className="group relative rounded-2xl overflow-hidden cursor-pointer min-w-0"
       style={{
         opacity: isVisible ? 1 : 0,
@@ -72,6 +78,13 @@ const ProjectCard = ({ project, index }: { project: typeof PROJECTS[number]; ind
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onClick={openProject}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          openProject();
+        }
+      }}
     >
       {/* Badge */}
       <div className="absolute top-3 left-3 z-20">
@@ -109,14 +122,12 @@ const ProjectCard = ({ project, index }: { project: typeof PROJECTS[number]; ind
           className="absolute top-3 right-3 flex gap-2 transition-all duration-300"
           style={{ opacity: hovered ? 1 : 0, transform: hovered ? "translateY(0)" : "translateY(-8px)" }}
         >
-          <QuickAction href={project.github} label={`GitHub – ${project.title}`} hue={h}>
+          <QuickAction href={project.github} label={`Source code – ${project.title}`} hue={h}>
             <Github className="h-4 w-4" aria-hidden="true" />
           </QuickAction>
-          {project.live && (
-            <QuickAction href={project.live} label={`Live demo – ${project.title}`} hue={h}>
-              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-            </QuickAction>
-          )}
+          <QuickAction href={project.live} label={`GitHub Pages – ${project.title}`} hue={h}>
+            <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+          </QuickAction>
         </div>
       </div>
 
@@ -159,6 +170,7 @@ const ProjectCard = ({ project, index }: { project: typeof PROJECTS[number]; ind
             aria-label={`View source code – ${project.title}`}
             className="inline-flex items-center gap-1.5 text-sm font-medium cursor-pointer transition-colors duration-200"
             style={{ color: "var(--text-muted)" }}
+            onClick={(e) => e.stopPropagation()}
             onMouseEnter={(e) => { e.currentTarget.style.color = "var(--foreground)"; }}
             onMouseLeave={(e) => { e.currentTarget.style.color = "var(--text-muted)"; }}
           >
@@ -166,32 +178,29 @@ const ProjectCard = ({ project, index }: { project: typeof PROJECTS[number]; ind
             Source
           </a>
 
-          {project.live ? (
-            <a
-              href={project.live}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`View live demo – ${project.title}`}
-              className="min-[420px]:ml-auto inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg text-sm font-semibold cursor-pointer transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary text-white"
-              style={{
-                background: "var(--gradient-primary)",
-                boxShadow: `0 3px 12px -3px hsla(${h},65%,50%,0.38)`,
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-1px)";
-                e.currentTarget.style.boxShadow = `0 6px 18px -3px hsla(${h},65%,50%,0.52)`;
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = `0 3px 12px -3px hsla(${h},65%,50%,0.38)`;
-              }}
-            >
-              Live Demo
-              <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
-            </a>
-          ) : (
-            <span className="ml-auto text-xs italic" style={{ color: "var(--text-subtle)" }}>Private / WIP</span>
-          )}
+          <a
+            href={project.live}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`View GitHub Pages site – ${project.title}`}
+            className="min-[420px]:ml-auto inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg text-sm font-semibold cursor-pointer transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary text-white"
+            style={{
+              background: "var(--gradient-primary)",
+              boxShadow: `0 3px 12px -3px hsla(${h},65%,50%,0.38)`,
+            }}
+            onClick={(e) => e.stopPropagation()}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateY(-1px)";
+              e.currentTarget.style.boxShadow = `0 6px 18px -3px hsla(${h},65%,50%,0.52)`;
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow = `0 3px 12px -3px hsla(${h},65%,50%,0.38)`;
+            }}
+          >
+            GitHub Pages
+            <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+          </a>
         </div>
       </div>
     </div>
@@ -211,6 +220,7 @@ const QuickAction = ({ href, label, hue, children }: { href: string; label: stri
       border: `1px solid hsla(${hue},65%,55%,0.25)`,
       color: `hsl(${hue},65%,55%)`,
     }}
+    onClick={(e) => e.stopPropagation()}
     onMouseEnter={(e) => {
       e.currentTarget.style.background = `hsla(${hue},65%,55%,0.18)`;
       e.currentTarget.style.transform = "scale(1.08)";
