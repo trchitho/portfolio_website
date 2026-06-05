@@ -1,111 +1,164 @@
-# Portfolio Website - Tran Chi Tho
+# Tran Chi Tho — Portfolio Website
 
-A modern, responsive portfolio website showcasing my skills as a Fullstack Developer. Built with React, TypeScript, and Tailwind CSS.
+<div align="center">
 
-## About Me
+[![Deploy to GitHub Pages](https://github.com/trchitho/portfolio_website/actions/workflows/deploy.yml/badge.svg)](https://github.com/trchitho/portfolio_website/actions/workflows/deploy.yml)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-brightgreen?logo=github)](https://trchitho.github.io/portfolio_website/)
+[![Vercel](https://img.shields.io/badge/Also%20on-Vercel-black?logo=vercel)](https://portfolio-website-five-gamma-53.vercel.app/)
+[![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38BDF8?logo=tailwindcss)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite)](https://vitejs.dev/)
 
-I'm **Tran Chi Tho**, a passionate Fullstack Developer with 1+ years of experience creating end-to-end digital solutions. I specialize in modern web technologies from frontend to backend and have a keen eye for design and user experience.
+A modern, responsive portfolio built with React, TypeScript, Three.js, and Tailwind CSS.  
+Features a **dark / light theme toggle**, 3D tech sphere, scroll-reveal animations, and full CI/CD via GitHub Actions.
 
-- **Experience**: 1+ Years
-- **Projects Completed**: 5+
-- **Location**: Danang, Vietnam
-- **Status**: Available for new opportunities
+**[🌐 Live Demo](https://trchitho.github.io/portfolio_website/)** · **[📧 Contact](mailto:tranchitho160704@gmail.com)**
 
-## Featured Projects
+</div>
 
-### 1. FullStack-Chat-App
-A full-stack real-time chat application built with the MERN stack and Socket.IO.
+---
 
-**Tech Stack:**
-- **Frontend**: React, Tailwind CSS, DaisyUI, Zustand, Axios, React Hot Toast, Socket.IO Client
-- **Backend**: Node.js, Express.js, MongoDB, Mongoose, JWT, Bcrypt, Cloudinary
+## ✨ Features
 
-[GitHub Repository](https://github.com/trchitho/FullStack-Chat-App)
+- **Dark / Light theme** — toggle button in the navbar; respects `prefers-color-scheme` on first visit, persists to `localStorage`
+- **3D Tech Sphere** — interactive globe built with Three.js / React Three Fiber showing my core technologies
+- **Scroll-reveal animations** — Intersection Observer–based entrance animations with staggered delays
+- **Motion-Driven design** — smooth hover states, floating particles, ambient glow orbs
+- **Responsive** — mobile-first, tested at 375 / 768 / 1024 / 1440 px
+- **Calendly integration** — schedule a call directly from the Contact section
+- **Accessibility** — WCAG AA contrast ratios, keyboard navigation, `prefers-reduced-motion` support
 
-### 2. AI-Based Career Recommendation System
-An AI-powered career guidance system built with monorepo architecture.
+---
 
-**Tech Stack:**
-- **Frontend**: React 18, Vite, Tailwind CSS, React Router, Axios
-- **Backend**: FastAPI, SQLAlchemy, PostgreSQL, pgvector, JWT Authentication
+## 🚀 Tech Stack
 
-[GitHub Repository](https://github.com/trchitho/AI-Based-Career-Recommendation-System)
+| Layer | Technologies |
+|---|---|
+| Framework | React 18, TypeScript 5 |
+| Styling | Tailwind CSS 3, shadcn/ui, CSS Custom Properties |
+| 3D | Three.js, React Three Fiber, @react-three/drei |
+| Build | Vite 5, SWC |
+| Icons | Lucide React |
+| State | React Context (theme), TanStack Query |
+| Routing | React Router DOM v6 |
+| CI/CD | GitHub Actions → GitHub Pages |
 
-### 3. Portfolio Website
-This responsive portfolio website showcasing modern web development techniques.
+---
 
-**Tech Stack:** React, TypeScript, Tailwind CSS, Vite, Three.js
-
-[GitHub Repository](https://github.com/trchitho/portfolio_website)
-
-## Features
-
-- Modern and responsive design
-- Interactive 3D tech sphere
-- Smooth animations and transitions
-- Dark/Light theme support
-- Mobile-first approach
-- Calendly integration for scheduling calls
-- Contact form with email functionality
-
-## Tech Stack
-
-- **Frontend**: React 18, TypeScript, Vite
-- **Styling**: Tailwind CSS, shadcn/ui components
-- **3D Graphics**: Three.js, React Three Fiber
-- **Icons**: Lucide React
-- **Animations**: CSS animations and transitions
-- **Deployment**: Vercel
-
-## Getting Started
-
-1. Clone the repository:
-```bash
-git clone https://github.com/trchitho/portfolio_website.git
-cd portfolio_website
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Start the development server:
-```bash
-npm run dev
-```
-
-4. Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
-
-## Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-
-## Project Structure
+## 🗂️ Project Structure
 
 ```
 src/
 ├── assets/
-│   ├── images/          # Project images
-│   └── icons/           # Technology icons
+│   ├── icons/           # SVG tech icons (React, Java, Spring, etc.)
+│   └── images/          # Project screenshots
 ├── components/
-│   ├── ui/              # Reusable UI components
-│   └── ...              # Page components
-├── hooks/               # Custom React hooks
-├── lib/                 # Utility functions
-└── pages/               # Page components
+│   ├── ui/              # shadcn/ui base components
+│   ├── Navigation.tsx   # Navbar with theme toggle
+│   ├── Hero.tsx         # Hero section + particles
+│   ├── HeroTechSphere.tsx  # Three.js 3D sphere
+│   ├── About.tsx
+│   ├── Skills.tsx
+│   ├── Projects.tsx
+│   └── Contact.tsx
+├── contexts/
+│   └── ThemeContext.tsx  # Dark/light theme provider
+├── hooks/
+│   ├── useScrollReveal.ts  # Intersection Observer hook
+│   └── use-*.ts
+├── pages/
+│   └── Index.tsx
+└── index.css            # Design system — all CSS variables
 ```
 
-## Contact
+---
 
-- **Email**: [tranchitho160704@gmail.com](mailto:tranchitho160704@gmail.com)
-- **GitHub**: [trchitho](https://github.com/trchitho)
-- **Facebook**: [chitho.tran.777](https://www.facebook.com/chitho.tran.777)
-- **Schedule a Call**: [Book a meeting](https://calendly.com/tranchitho160704)
+## 🛠️ Getting Started
 
-## License
+```bash
+# Clone
+git clone https://github.com/trchitho/portfolio_website.git
+cd portfolio_website
 
-This project is open source and available under the [MIT License](LICENSE).
+# Install
+npm install
+
+# Dev server (http://localhost:8080)
+npm run dev
+
+# Production build
+npm run build
+
+# Preview production build locally
+npm run preview
+```
+
+---
+
+## 🔄 CI/CD — GitHub Actions
+
+Every push to `main` automatically:
+
+1. Checks out the repo
+2. Installs dependencies with `npm ci`
+3. Builds with `vite build` (sets `base: /portfolio_website/`)
+4. Deploys `dist/` to GitHub Pages via `actions/deploy-pages`
+
+**Setup steps (one-time):**
+
+1. Go to **Settings → Pages** in your GitHub repo
+2. Set **Source** → `GitHub Actions`
+3. Push to `main` — the workflow runs automatically
+
+Live URL: `https://trchitho.github.io/portfolio_website/`
+
+---
+
+## 🎨 Design System
+
+All colors are CSS custom properties in `src/index.css`.  
+Two complete token sets — `:root` (light) and `.dark` — cover every component.  
+No hardcoded color values in components.
+
+Key tokens:
+
+```css
+--surface-page       /* page background */
+--surface-card       /* card background */
+--text-body          /* body text */
+--text-overline      /* section labels */
+--badge-bg/border/text
+--btn-ghost-*
+--gradient-primary   /* violet → purple gradient */
+--card-shadow / --card-shadow-hover
+--sphere-icon-bg     /* Three.js icon chip */
+```
+
+---
+
+## 📂 Featured Projects
+
+| Project | Stack | Links |
+|---|---|---|
+| **FoodHub** — Food Delivery Marketplace | Java 21, Spring Boot, React, MySQL, Redis | [Code](https://github.com/trchitho/Food-Delivery-Project) · [Demo](https://food-delivery-project-chi-six.vercel.app/) |
+| **Chat App** — Real-time MERN Chat | React, Socket.IO, Node.js, MongoDB | [Code](https://github.com/trchitho/FullStack-Chat-App) |
+| **AI Career** — Recommendation System | FastAPI, React, PostgreSQL, pgvector | [Code](https://github.com/trchitho/AI-Based-Career-Recommendation-System) |
+| **Portfolio** — This site | React, TypeScript, Three.js, Tailwind | [Code](https://github.com/trchitho/portfolio_website) · [Demo](https://trchitho.github.io/portfolio_website/) |
+
+---
+
+## 📬 Contact
+
+| Channel | Link |
+|---|---|
+| Email | [tranchitho160704@gmail.com](mailto:tranchitho160704@gmail.com) |
+| GitHub | [@trchitho](https://github.com/trchitho) |
+| Facebook | [chitho.tran.777](https://www.facebook.com/chitho.tran.777) |
+| Schedule a call | [Calendly](https://calendly.com/tranchitho160704) |
+
+---
+
+## 📄 License
+
+[MIT](LICENSE) © 2024 Tran Chi Tho
