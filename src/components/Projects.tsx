@@ -61,7 +61,7 @@ const ProjectCard = ({ project, index }: { project: typeof PROJECTS[number]; ind
   return (
     <div
       ref={ref}
-      className="group relative rounded-2xl overflow-hidden cursor-pointer"
+      className="group relative rounded-2xl overflow-hidden cursor-pointer min-w-0"
       style={{
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? "translateY(0) scale(1)" : "translateY(32px) scale(0.97)",
@@ -151,7 +151,7 @@ const ProjectCard = ({ project, index }: { project: typeof PROJECTS[number]; ind
         </div>
 
         {/* CTA row */}
-        <div className="flex items-center gap-3 pt-3" style={{ borderTop: "1px solid var(--border-divider)" }}>
+        <div className="flex flex-wrap items-center gap-3 pt-3" style={{ borderTop: "1px solid var(--border-divider)" }}>
           <a
             href={project.github}
             target="_blank"
@@ -172,7 +172,7 @@ const ProjectCard = ({ project, index }: { project: typeof PROJECTS[number]; ind
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`View live demo – ${project.title}`}
-              className="ml-auto inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg text-sm font-semibold cursor-pointer transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary text-white"
+              className="min-[420px]:ml-auto inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg text-sm font-semibold cursor-pointer transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary text-white"
               style={{
                 background: "var(--gradient-primary)",
                 boxShadow: `0 3px 12px -3px hsla(${h},65%,50%,0.38)`,
@@ -255,15 +255,15 @@ const SectionHeader = () => {
 };
 
 const Projects = () => (
-  <section id="projects" className="py-24 px-6 relative overflow-hidden" style={{ background: "var(--surface-page-alt)" }}>
+  <section id="projects" className="py-20 sm:py-24 px-4 sm:px-6 relative overflow-hidden" style={{ background: "var(--surface-page-alt)" }}>
     <div
-      className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[280px] pointer-events-none"
+      className="absolute top-0 left-1/2 -translate-x-1/2 w-[min(100vw,600px)] h-[280px] pointer-events-none"
       style={{ background: "radial-gradient(ellipse, hsla(250,70%,55%,0.05) 0%, transparent 70%)", filter: "blur(40px)" }}
       aria-hidden="true"
     />
     <div className="max-w-6xl mx-auto relative z-10">
       <SectionHeader />
-      <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+      <div className="grid min-w-0 md:grid-cols-2 gap-6 lg:gap-8">
         {PROJECTS.map((p, i) => <ProjectCard key={p.title} project={p} index={i} />)}
       </div>
       <MoreProjectsCTA />
@@ -287,7 +287,7 @@ const MoreProjectsCTA = () => {
         href="https://github.com/trchitho"
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm cursor-pointer border transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+        className="inline-flex max-w-full items-center justify-center gap-2 px-5 sm:px-6 py-3 rounded-xl font-semibold text-sm cursor-pointer border transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
         style={{
           background: "var(--badge-bg)",
           borderColor: "var(--badge-border)",

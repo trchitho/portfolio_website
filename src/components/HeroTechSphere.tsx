@@ -143,7 +143,7 @@ const HeroSphere: React.FC = () => {
 
 const HeroTechSphere: React.FC = () => {
   return (
-    <div className="w-[500px] h-[500px] relative">
+    <div className="relative mx-auto aspect-square w-[min(82vw,500px)] max-w-full">
       <Canvas
         camera={{ position: [0, 0, 6], fov: 60 }}
         style={{ background: 'transparent' }}

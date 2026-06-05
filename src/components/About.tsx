@@ -16,7 +16,7 @@ const About = () => {
   const { ref: rightRef, isVisible: rightVisible } = useScrollReveal<HTMLDivElement>({ threshold: 0.15 });
 
   return (
-    <section id="about" className="py-24 px-6" style={{ background: "var(--surface-page-alt)" }}>
+    <section id="about" className="py-20 sm:py-24 px-4 sm:px-6 overflow-hidden" style={{ background: "var(--surface-page-alt)" }}>
       <div className="max-w-4xl mx-auto">
 
         {/* Header */}
@@ -38,12 +38,12 @@ const About = () => {
           <div className="w-16 h-1 rounded-full mx-auto" style={{ background: "var(--gradient-primary)" }} />
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="grid min-w-0 md:grid-cols-2 gap-10 md:gap-12 items-start">
 
           {/* Left — bio */}
           <div
             ref={leftRef}
-            className="space-y-5"
+            className="space-y-5 min-w-0"
             style={{
               opacity: leftVisible ? 1 : 0,
               transform: leftVisible ? "translateX(0)" : "translateX(-24px)",
@@ -88,7 +88,7 @@ const About = () => {
           {/* Right — quick facts */}
           <div
             ref={rightRef}
-            className="rounded-2xl overflow-hidden"
+            className="rounded-2xl overflow-hidden min-w-0"
             style={{
               opacity: rightVisible ? 1 : 0,
               transform: rightVisible ? "translateX(0)" : "translateX(24px)",
@@ -104,10 +104,10 @@ const About = () => {
 
             <div className="divide-y" style={{ borderColor: "var(--border-divider)" }}>
               {quickFacts.map(({ label, value, highlight }) => (
-                <div key={label} className="flex items-center justify-between px-6 py-3.5">
+                <div key={label} className="flex flex-col min-[420px]:flex-row min-[420px]:items-center min-[420px]:justify-between gap-1.5 px-5 sm:px-6 py-3.5">
                   <span className="text-sm" style={{ color: "var(--text-muted)" }}>{label}</span>
                   <span
-                    className="text-sm font-semibold"
+                    className="text-sm font-semibold break-words min-[420px]:text-right"
                     style={{ color: highlight ? "hsl(142,60%,40%)" : "var(--foreground)" }}
                   >
                     {highlight && (

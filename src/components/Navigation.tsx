@@ -40,13 +40,13 @@ const Navigation = () => {
           : { background: "transparent" }
       }
     >
-      <div className="max-w-6xl mx-auto px-6 py-4">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4">
         <div className="flex items-center justify-between">
 
           {/* Logo */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent hover:opacity-80 transition-opacity duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
+            className="min-w-0 max-w-[58vw] truncate text-2xl sm:text-xl font-bold bg-gradient-primary bg-clip-text text-transparent hover:opacity-80 transition-opacity duration-200 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
           >
             Tran Chi Tho
           </button>

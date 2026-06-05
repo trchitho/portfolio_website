@@ -38,22 +38,22 @@ const FeaturedCard = ({ cat }: { cat: typeof skillCategories[number] }) => {
     >
       <div className="h-1 w-full" style={{ background: "var(--gradient-primary)" }} aria-hidden="true" />
 
-      <div className="p-8">
-        <div className="flex items-start justify-between mb-6">
-          <div className="flex items-center gap-4">
+      <div className="p-5 sm:p-8">
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
+          <div className="flex min-w-0 items-center gap-3 sm:gap-4">
             <div
-              className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0"
+              className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center flex-shrink-0"
               style={{ background: "var(--gradient-primary)", boxShadow: `0 4px 14px -4px hsla(${h},70%,50%,0.4)` }}
             >
-              <IconComponent className="h-7 w-7 text-white" aria-hidden="true" />
+              <IconComponent className="h-6 w-6 sm:h-7 sm:w-7 text-white" aria-hidden="true" />
             </div>
-            <div>
-              <h3 className="text-2xl font-bold text-foreground">{cat.title}</h3>
+            <div className="min-w-0">
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground break-words">{cat.title}</h3>
               <p className="text-sm" style={{ color: "var(--text-muted)" }}>{cat.subtitle}</p>
             </div>
           </div>
           <span
-            className="px-3 py-1 rounded-full text-xs font-semibold flex-shrink-0"
+            className="w-fit max-w-full px-3 py-1 rounded-full text-xs font-semibold"
             style={{
               background: "var(--badge-bg)",
               border: "1px solid var(--badge-border)",
@@ -64,11 +64,11 @@ const FeaturedCard = ({ cat }: { cat: typeof skillCategories[number] }) => {
           </span>
         </div>
 
-        <div className="flex flex-wrap gap-2.5">
+        <div className="flex flex-wrap gap-2">
           {cat.skills.map((skill) => (
             <span
               key={skill}
-              className="px-4 py-2 rounded-full text-sm font-semibold border transition-all duration-200 cursor-default"
+              className="max-w-full px-3 sm:px-4 py-2 rounded-full text-sm font-semibold border transition-all duration-200 cursor-default break-words"
               style={{
                 background: `hsla(${h},70%,55%,0.07)`,
                 borderColor: `hsla(${h},70%,55%,0.25)`,
@@ -100,7 +100,7 @@ const SkillCard = ({ cat, index }: { cat: typeof skillCategories[number]; index:
   return (
     <div
       ref={ref}
-      className="rounded-2xl p-6"
+      className="rounded-2xl p-5 sm:p-6 min-w-0"
       style={{
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? "translateY(0)" : "translateY(24px)",
@@ -125,14 +125,14 @@ const SkillCard = ({ cat, index }: { cat: typeof skillCategories[number]; index:
         >
           <IconComponent className="h-5 w-5" aria-hidden="true" />
         </div>
-        <h3 className="text-base font-bold text-foreground">{cat.title}</h3>
+        <h3 className="text-base font-bold text-foreground break-words">{cat.title}</h3>
       </div>
 
       <div className="flex flex-wrap gap-1.5">
         {cat.skills.map((skill) => (
           <span
             key={skill}
-            className="text-sm px-2.5 py-1 rounded-full border"
+            className="max-w-full text-sm px-2.5 py-1 rounded-full border break-words"
             style={{
               background: `hsla(${h},55%,55%,0.07)`,
               borderColor: `hsla(${h},55%,55%,0.20)`,
@@ -176,7 +176,7 @@ const SectionHeader = () => {
 };
 
 const Skills = () => (
-  <section id="skills" className="py-24 px-6" style={{ background: "var(--surface-page)" }}>
+  <section id="skills" className="py-20 sm:py-24 px-4 sm:px-6 overflow-hidden" style={{ background: "var(--surface-page)" }}>
     <div className="max-w-6xl mx-auto">
       <SectionHeader />
       {skillCategories.filter((c) => c.featured).map((cat) => <FeaturedCard key={cat.title} cat={cat} />)}

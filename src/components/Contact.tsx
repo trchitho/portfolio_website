@@ -11,7 +11,7 @@ const Contact = () => {
 
   return (
     <>
-      <section id="contact" className="py-24 px-6" style={{ background: "var(--surface-page)" }}>
+      <section id="contact" className="py-20 sm:py-24 px-4 sm:px-6 overflow-hidden" style={{ background: "var(--surface-page)" }}>
         <div className="max-w-4xl mx-auto text-center">
 
           {/* Header */}
@@ -27,7 +27,7 @@ const Contact = () => {
             <p className="text-sm font-semibold tracking-[0.18em] uppercase mb-3" style={{ color: "var(--text-overline)" }}>
               Get in touch
             </p>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground break-words">
               Let's <span className="bg-gradient-primary bg-clip-text text-transparent">Connect</span>
             </h2>
             <div className="w-16 h-1 rounded-full mx-auto mb-6" style={{ background: "var(--gradient-primary)" }} />
@@ -40,7 +40,7 @@ const Contact = () => {
           {/* Cards */}
           <div
             ref={cardsRef}
-            className="grid md:grid-cols-2 gap-6 mb-12"
+            className="grid min-w-0 md:grid-cols-2 gap-6 mb-12"
             style={{
               opacity: cardsVisible ? 1 : 0,
               transform: cardsVisible ? "translateY(0)" : "translateY(24px)",
@@ -49,7 +49,7 @@ const Contact = () => {
           >
             {/* Email */}
             <div
-              className="rounded-2xl p-8 text-left transition-all duration-300"
+              className="rounded-2xl p-5 sm:p-8 text-left transition-all duration-300 min-w-0"
               style={{ background: "var(--surface-card)", border: "1px solid var(--border-card)", boxShadow: "var(--card-shadow)" }}
               onMouseEnter={(e) => {
                 (e.currentTarget as HTMLElement).style.borderColor = "var(--border-card-hover)";
@@ -72,7 +72,7 @@ const Contact = () => {
               </p>
               <a
                 href="mailto:tranchitho160704@gmail.com"
-                className="inline-flex items-center gap-2 w-full justify-center px-4 py-2.5 rounded-xl text-sm font-semibold cursor-pointer border transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                className="inline-flex min-w-0 items-center gap-2 w-full justify-center px-3 sm:px-4 py-2.5 rounded-xl text-sm font-semibold cursor-pointer border transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary break-all"
                 style={{
                   background: "var(--badge-bg)",
                   borderColor: "var(--badge-border)",
@@ -93,7 +93,7 @@ const Contact = () => {
 
             {/* Schedule */}
             <div
-              className="rounded-2xl p-8 text-left transition-all duration-300"
+              className="rounded-2xl p-5 sm:p-8 text-left transition-all duration-300 min-w-0"
               style={{ background: "var(--surface-card)", border: "1px solid var(--border-card)", boxShadow: "var(--card-shadow)" }}
               onMouseEnter={(e) => {
                 (e.currentTarget as HTMLElement).style.borderColor = "var(--border-card-hover)";

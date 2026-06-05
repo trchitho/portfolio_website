@@ -128,16 +128,16 @@ const Hero = () => {
       />
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-12">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[80vh]">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 py-24 sm:py-20 lg:py-12">
+        <div className="grid min-w-0 lg:grid-cols-2 gap-8 lg:gap-16 items-center lg:min-h-[80vh]">
 
           {/* Left */}
-          <div className="text-center lg:text-left order-2 lg:order-1">
+          <div className="min-w-0 text-center lg:text-left order-2 lg:order-1">
 
             {/* Status badge */}
-            <div className="mb-6 inline-flex" style={stagger(0.05)}>
+            <div className="mb-5 inline-flex max-w-full" style={stagger(0.05)}>
               <span
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold border select-none"
+                className="inline-flex min-w-0 items-center gap-2 px-3.5 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-semibold border select-none"
                 style={{
                   background: "var(--badge-bg)",
                   borderColor: "var(--badge-border)",
@@ -148,34 +148,34 @@ const Hero = () => {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
                 </span>
-                Intern / Fresher Fullstack Developer
+                <span className="min-w-0 break-words">Intern / Fresher Fullstack Developer</span>
               </span>
             </div>
 
             {/* Name */}
             <h1
-              className="font-bold leading-[1.08] tracking-tight mb-5"
-              style={{ fontSize: "clamp(3rem, 8vw, 5.5rem)", ...stagger(0.15) }}
+              className="font-bold leading-[1.08] tracking-tight mb-5 break-words"
+              style={{ fontSize: "clamp(2.55rem, 13vw, 5.5rem)", ...stagger(0.15) }}
             >
               <span className="bg-gradient-primary bg-clip-text text-transparent">Tran</span>{" "}
               <span className="text-foreground">Chi Tho</span>
             </h1>
 
             {/* Role + bar */}
-            <div className="mb-6 flex items-center gap-3 justify-center lg:justify-start" style={stagger(0.25)}>
+            <div className="mb-6 flex min-w-0 items-center gap-3 justify-center lg:justify-start" style={stagger(0.25)}>
               <span
                 className="h-[2px] w-8 rounded-full flex-shrink-0"
                 style={{ background: "var(--gradient-primary)" }}
                 aria-hidden="true"
               />
-              <p className="text-lg md:text-xl font-semibold tracking-wide" style={{ color: "var(--text-role)" }}>
+              <p className="min-w-0 text-base sm:text-lg md:text-xl font-semibold tracking-wide leading-snug" style={{ color: "var(--text-role)" }}>
                 Building full-stack products that ship
               </p>
             </div>
 
             {/* Typewriter */}
             <div
-              className="text-base md:text-lg mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed"
+              className="text-base md:text-lg mb-8 sm:mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed break-words"
               style={{
                 color: "var(--text-body)",
                 opacity: isVisible ? 1 : 0,
@@ -189,7 +189,7 @@ const Hero = () => {
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-10" style={stagger(0.45)}>
+            <div className="flex flex-col min-[420px]:flex-row flex-wrap justify-center lg:justify-start gap-3 mb-8 sm:mb-10" style={stagger(0.45)}>
               <HeroButton
                 href="#projects"
                 variant="primary"
@@ -215,15 +215,15 @@ const Hero = () => {
             </div>
 
             {/* Stats */}
-            <div className="mt-10 flex justify-center lg:justify-start gap-8" style={stagger(0.7)}>
+            <div className="mt-8 sm:mt-10 grid grid-cols-3 gap-3 sm:flex sm:justify-center lg:justify-start sm:gap-8" style={stagger(0.7)}>
               {[
                 { value: "4+", label: "Projects Built" },
                 { value: "3+", label: "Tech Stacks" },
                 { value: "1+", label: "Year Learning" },
               ].map(({ value, label }) => (
-                <div key={label} className="text-center lg:text-left">
+                <div key={label} className="min-w-0 text-center lg:text-left">
                   <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">{value}</div>
-                  <div className="text-xs whitespace-nowrap mt-0.5" style={{ color: "var(--text-muted)" }}>{label}</div>
+                  <div className="text-[11px] sm:text-xs leading-tight mt-0.5" style={{ color: "var(--text-muted)" }}>{label}</div>
                 </div>
               ))}
             </div>
@@ -231,14 +231,14 @@ const Hero = () => {
 
           {/* Right — Tech Sphere */}
           <div
-            className="flex justify-center items-center order-1 lg:order-2"
+            className="min-w-0 flex justify-center items-center order-1 lg:order-2"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? "scale(1)" : "scale(0.88)",
               transition: "opacity 0.9s ease-out 0.25s, transform 0.9s ease-out 0.25s",
             }}
           >
-            <div className="relative">
+            <div className="relative w-full max-w-[500px] mx-auto">
               <div
                 className="absolute inset-0 rounded-full pointer-events-none"
                 style={{
@@ -257,7 +257,7 @@ const Hero = () => {
                 }}
                 aria-hidden="true"
               />
-              <div className="w-full max-w-lg relative z-10">
+              <div className="w-full max-w-full relative z-10">
                 <HeroTechSphere />
               </div>
             </div>
@@ -300,7 +300,7 @@ interface HeroButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> 
 
 const HeroButton = ({ variant, children, ...props }: HeroButtonProps) => {
   const base =
-    "inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm cursor-pointer transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary select-none";
+    "inline-flex min-w-0 items-center justify-center gap-2 px-5 sm:px-6 py-3 rounded-xl font-semibold text-sm cursor-pointer transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary select-none";
 
   if (variant === "primary") {
     return (
