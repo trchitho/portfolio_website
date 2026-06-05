@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
+import { useTheme } from "@/contexts/ThemeContext";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -29,16 +31,18 @@ const Navigation = () => {
       style={
         isScrolled
           ? {
-              background: "hsla(0,0%,100%,0.88)",
+              background: "var(--nav-scrolled-bg)",
               backdropFilter: "blur(16px)",
-              borderBottom: "1px solid hsl(220,18%,88%)",
-              boxShadow: "0 2px 16px -4px hsla(220,20%,20%,0.08)",
+              WebkitBackdropFilter: "blur(16px)",
+              borderBottom: "1px solid var(--nav-scrolled-border)",
+              boxShadow: "var(--nav-scrolled-shadow)",
             }
           : { background: "transparent" }
       }
     >
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
+
           {/* Logo */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -48,32 +52,40 @@ const Navigation = () => {
           </button>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-7">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className="text-sm font-medium cursor-pointer transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
-                style={{ color: "hsl(220,12%,36%)" }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "hsl(250,70%,42%)"; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "hsl(220,12%,36%)"; }}
+                style={{ color: "var(--nav-link-color)" }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.color = "var(--nav-link-hover)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.color = "var(--nav-link-color)";
+                }}
               >
                 {item.label}
               </button>
             ))}
+
+            {/* Theme toggle */}
+            <ThemeToggle theme={theme} onToggle={toggleTheme} />
+
+            {/* Resume CTA */}
             <a
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold cursor-pointer transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold cursor-pointer transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary text-white"
               style={{
                 background: "var(--gradient-primary)",
-                color: "#fff",
                 boxShadow: "0 3px 12px -3px hsla(250,70%,50%,0.35)",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "translateY(-1px)";
-                e.currentTarget.style.boxShadow = "0 6px 18px -3px hsla(250,70%,50%,0.48)";
+                e.currentTarget.style.boxShadow = "0 6px 18px -3px hsla(250,70%,50%,0.50)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "translateY(0)";
@@ -84,18 +96,19 @@ const Navigation = () => {
             </a>
           </div>
 
-          {/* Mobile toggle */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg cursor-pointer transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-            style={{ color: "hsl(220,12%,36%)" }}
-            onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "hsl(220,18%,92%)"; }}
-            onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "transparent"; }}
-            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={isMobileMenuOpen}
-          >
-            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          {/* Mobile: theme toggle + hamburger */}
+          <div className="md:hidden flex items-center gap-2">
+            <ThemeToggle theme={theme} onToggle={toggleTheme} />
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 rounded-lg cursor-pointer transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              style={{ color: "var(--nav-link-color)" }}
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMobileMenuOpen}
+            >
+              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile menu */}
@@ -103,10 +116,11 @@ const Navigation = () => {
           <div
             className="md:hidden mt-3 py-4 rounded-2xl"
             style={{
-              background: "hsla(0,0%,100%,0.95)",
+              background: "var(--nav-mobile-bg)",
               backdropFilter: "blur(12px)",
-              border: "1px solid hsl(220,18%,88%)",
-              boxShadow: "0 8px 32px -8px hsla(220,20%,20%,0.12)",
+              WebkitBackdropFilter: "blur(12px)",
+              border: "1px solid var(--nav-mobile-border)",
+              boxShadow: "var(--nav-mobile-shadow)",
             }}
           >
             <div className="flex flex-col gap-1 px-3">
@@ -114,29 +128,33 @@ const Navigation = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-left px-3 py-2.5 rounded-lg text-sm font-medium cursor-pointer transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                  style={{ color: "hsl(220,12%,30%)" }}
+                  className="text-left px-3 py-2.5 rounded-lg text-sm font-medium cursor-pointer transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                  style={{ color: "var(--nav-link-color)" }}
                   onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.background = "hsl(250,70%,50%)";
-                    (e.currentTarget as HTMLElement).style.color = "#fff";
+                    const el = e.currentTarget as HTMLElement;
+                    el.style.background = "var(--gradient-primary)";
+                    el.style.color = "#fff";
                   }}
                   onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.background = "transparent";
-                    (e.currentTarget as HTMLElement).style.color = "hsl(220,12%,30%)";
+                    const el = e.currentTarget as HTMLElement;
+                    el.style.background = "transparent";
+                    el.style.color = "var(--nav-link-color)";
                   }}
                 >
                   {item.label}
                 </button>
               ))}
-              <div className="pt-2 mt-1" style={{ borderTop: "1px solid hsl(220,18%,90%)" }}>
+              <div
+                className="pt-2 mt-1"
+                style={{ borderTop: "1px solid var(--border-divider)" }}
+              >
                 <a
                   href="/resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full text-center px-4 py-2.5 rounded-lg text-sm font-semibold cursor-pointer transition-all duration-200"
+                  className="block w-full text-center px-4 py-2.5 rounded-lg text-sm font-semibold cursor-pointer transition-all duration-200 text-white"
                   style={{
                     background: "var(--gradient-primary)",
-                    color: "#fff",
                     boxShadow: "0 3px 12px -3px hsla(250,70%,50%,0.35)",
                   }}
                 >
@@ -148,6 +166,78 @@ const Navigation = () => {
         )}
       </div>
     </nav>
+  );
+};
+
+/* ─── Theme Toggle Button ────────────────────────────────────────── */
+interface ThemeToggleProps {
+  theme: "light" | "dark";
+  onToggle: () => void;
+}
+
+const ThemeToggle = ({ theme, onToggle }: ThemeToggleProps) => {
+  const isDark = theme === "dark";
+
+  return (
+    <button
+      onClick={onToggle}
+      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      className="relative flex items-center cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-full transition-all duration-200"
+      style={{
+        width: 44,
+        height: 24,
+        padding: 3,
+        background: isDark
+          ? "linear-gradient(135deg, hsl(250,84%,55%), hsl(270,90%,65%))"
+          : "hsl(220,18%,86%)",
+        boxShadow: isDark
+          ? "0 0 12px hsla(250,84%,65%,0.35)"
+          : "inset 0 1px 3px hsla(220,20%,20%,0.12)",
+      }}
+    >
+      {/* Track icons */}
+      <span
+        className="absolute left-[5px] flex items-center justify-center transition-opacity duration-200"
+        style={{ opacity: isDark ? 0 : 1 }}
+        aria-hidden="true"
+      >
+        <Sun
+          className="h-3 w-3"
+          style={{ color: "hsl(40,90%,50%)" }}
+          strokeWidth={2.5}
+        />
+      </span>
+      <span
+        className="absolute right-[5px] flex items-center justify-center transition-opacity duration-200"
+        style={{ opacity: isDark ? 1 : 0 }}
+        aria-hidden="true"
+      >
+        <Moon
+          className="h-3 w-3"
+          style={{ color: "hsl(220,60%,90%)" }}
+          strokeWidth={2.5}
+        />
+      </span>
+
+      {/* Thumb */}
+      <span
+        className="relative z-10 flex items-center justify-center rounded-full transition-all duration-300"
+        style={{
+          width: 18,
+          height: 18,
+          background: "#fff",
+          transform: isDark ? "translateX(20px)" : "translateX(0)",
+          boxShadow: "0 1px 4px rgba(0,0,0,0.18)",
+        }}
+        aria-hidden="true"
+      >
+        {isDark ? (
+          <Moon className="h-2.5 w-2.5" style={{ color: "hsl(250,70%,50%)" }} strokeWidth={2.5} />
+        ) : (
+          <Sun className="h-2.5 w-2.5" style={{ color: "hsl(40,90%,50%)" }} strokeWidth={2.5} />
+        )}
+      </span>
+    </button>
   );
 };
 

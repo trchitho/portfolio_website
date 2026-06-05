@@ -56,14 +56,14 @@ const LanguageIcon: React.FC<LanguageIconProps> = ({ position, language, index }
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'rgba(255, 255, 255, 0.88)',
+          background: 'var(--sphere-icon-bg)',
           borderRadius: '10px',
-          border: '1px solid rgba(91, 63, 217, 0.22)',
+          border: '1px solid var(--sphere-icon-border)',
           backdropFilter: 'blur(8px)',
           padding: '5px',
           userSelect: 'none',
           pointerEvents: 'none',
-          boxShadow: '0 2px 8px rgba(91, 63, 217, 0.10)',
+          boxShadow: 'var(--sphere-icon-shadow)',
         }}
       >
         <img 

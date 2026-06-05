@@ -1,4 +1,4 @@
-import { Mail, MessageSquare, Github } from "lucide-react";
+import { Mail, MessageSquare } from "lucide-react";
 import { useState } from "react";
 import CalendlyWidget from "./CalendlyWidget";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
@@ -11,7 +11,7 @@ const Contact = () => {
 
   return (
     <>
-      <section id="contact" className="py-24 px-6" style={{ background: "hsl(0,0%,100%)" }}>
+      <section id="contact" className="py-24 px-6" style={{ background: "var(--surface-page)" }}>
         <div className="max-w-4xl mx-auto text-center">
 
           {/* Header */}
@@ -24,20 +24,20 @@ const Contact = () => {
               transition: "opacity 0.7s ease-out, transform 0.7s ease-out",
             }}
           >
-            <p className="text-sm font-semibold tracking-[0.18em] uppercase mb-3" style={{ color: "hsl(250,70%,48%)" }}>
+            <p className="text-sm font-semibold tracking-[0.18em] uppercase mb-3" style={{ color: "var(--text-overline)" }}>
               Get in touch
             </p>
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
               Let's <span className="bg-gradient-primary bg-clip-text text-transparent">Connect</span>
             </h2>
             <div className="w-16 h-1 rounded-full mx-auto mb-6" style={{ background: "var(--gradient-primary)" }} />
-            <p className="text-lg max-w-2xl mx-auto leading-relaxed" style={{ color: "hsl(220,12%,40%)" }}>
+            <p className="text-lg max-w-2xl mx-auto leading-relaxed" style={{ color: "var(--text-body)" }}>
               I'm always open to new opportunities and exciting projects.
               Let's discuss how we can work together to create something amazing.
             </p>
           </div>
 
-          {/* Contact cards */}
+          {/* Cards */}
           <div
             ref={cardsRef}
             className="grid md:grid-cols-2 gap-6 mb-12"
@@ -47,87 +47,76 @@ const Contact = () => {
               transition: "opacity 0.7s ease-out 0.1s, transform 0.7s ease-out 0.1s",
             }}
           >
-            {/* Email card */}
+            {/* Email */}
             <div
               className="rounded-2xl p-8 text-left transition-all duration-300"
-              style={{
-                background: "#ffffff",
-                border: "1px solid hsl(220,18%,88%)",
-                boxShadow: "0 2px 16px -4px hsla(220,20%,20%,0.08)",
-              }}
+              style={{ background: "var(--surface-card)", border: "1px solid var(--border-card)", boxShadow: "var(--card-shadow)" }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor = "hsla(250,70%,50%,0.35)";
-                (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 32px -8px hsla(250,70%,50%,0.14)";
+                (e.currentTarget as HTMLElement).style.borderColor = "var(--border-card-hover)";
+                (e.currentTarget as HTMLElement).style.boxShadow = "var(--card-shadow-hover)";
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor = "hsl(220,18%,88%)";
-                (e.currentTarget as HTMLElement).style.boxShadow = "0 2px 16px -4px hsla(220,20%,20%,0.08)";
+                (e.currentTarget as HTMLElement).style.borderColor = "var(--border-card)";
+                (e.currentTarget as HTMLElement).style.boxShadow = "var(--card-shadow)";
               }}
             >
               <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                style={{ background: "hsla(250,70%,50%,0.10)", color: "hsl(250,70%,42%)" }}
+                style={{ background: "var(--badge-bg)", color: "var(--badge-text)" }}
               >
                 <Mail className="h-6 w-6" aria-hidden="true" />
               </div>
               <h3 className="text-lg font-bold mb-2 text-foreground">Email Me</h3>
-              <p className="text-sm mb-5 leading-relaxed" style={{ color: "hsl(220,12%,44%)" }}>
+              <p className="text-sm mb-5 leading-relaxed" style={{ color: "var(--text-body)" }}>
                 Drop me a line and I'll get back to you within 24 hours.
               </p>
               <a
                 href="mailto:tranchitho160704@gmail.com"
                 className="inline-flex items-center gap-2 w-full justify-center px-4 py-2.5 rounded-xl text-sm font-semibold cursor-pointer border transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                 style={{
-                  background: "hsla(250,70%,50%,0.06)",
-                  borderColor: "hsla(250,70%,50%,0.25)",
-                  color: "hsl(250,70%,40%)",
+                  background: "var(--badge-bg)",
+                  borderColor: "var(--badge-border)",
+                  color: "var(--badge-text)",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = "hsla(250,70%,50%,0.12)";
-                  e.currentTarget.style.borderColor = "hsla(250,70%,50%,0.48)";
+                  e.currentTarget.style.background = "var(--btn-ghost-bg-hover)";
+                  e.currentTarget.style.borderColor = "var(--btn-ghost-border-hover)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = "hsla(250,70%,50%,0.06)";
-                  e.currentTarget.style.borderColor = "hsla(250,70%,50%,0.25)";
+                  e.currentTarget.style.background = "var(--badge-bg)";
+                  e.currentTarget.style.borderColor = "var(--badge-border)";
                 }}
               >
                 tranchitho160704@gmail.com
               </a>
             </div>
 
-            {/* Schedule card */}
+            {/* Schedule */}
             <div
               className="rounded-2xl p-8 text-left transition-all duration-300"
-              style={{
-                background: "#ffffff",
-                border: "1px solid hsl(220,18%,88%)",
-                boxShadow: "0 2px 16px -4px hsla(220,20%,20%,0.08)",
-              }}
+              style={{ background: "var(--surface-card)", border: "1px solid var(--border-card)", boxShadow: "var(--card-shadow)" }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor = "hsla(250,70%,50%,0.35)";
-                (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 32px -8px hsla(250,70%,50%,0.14)";
+                (e.currentTarget as HTMLElement).style.borderColor = "var(--border-card-hover)";
+                (e.currentTarget as HTMLElement).style.boxShadow = "var(--card-shadow-hover)";
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor = "hsl(220,18%,88%)";
-                (e.currentTarget as HTMLElement).style.boxShadow = "0 2px 16px -4px hsla(220,20%,20%,0.08)";
+                (e.currentTarget as HTMLElement).style.borderColor = "var(--border-card)";
+                (e.currentTarget as HTMLElement).style.boxShadow = "var(--card-shadow)";
               }}
             >
               <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                style={{ background: "hsla(250,70%,50%,0.10)", color: "hsl(250,70%,42%)" }}
+                style={{ background: "var(--badge-bg)", color: "var(--badge-text)" }}
               >
                 <MessageSquare className="h-6 w-6" aria-hidden="true" />
               </div>
               <h3 className="text-lg font-bold mb-2 text-foreground">Let's Chat</h3>
-              <p className="text-sm mb-5 leading-relaxed" style={{ color: "hsl(220,12%,44%)" }}>
+              <p className="text-sm mb-5 leading-relaxed" style={{ color: "var(--text-body)" }}>
                 Schedule a call to discuss your project requirements.
               </p>
               <button
                 className="w-full px-4 py-2.5 rounded-xl text-sm font-semibold cursor-pointer transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary text-white"
-                style={{
-                  background: "var(--gradient-primary)",
-                  boxShadow: "0 4px 14px -4px hsla(250,70%,50%,0.40)",
-                }}
+                style={{ background: "var(--gradient-primary)", boxShadow: "0 4px 14px -4px hsla(250,70%,50%,0.40)" }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = "translateY(-1px)";
                   e.currentTarget.style.boxShadow = "0 8px 22px -4px hsla(250,70%,50%,0.50)";
@@ -143,7 +132,7 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Social links */}
+          {/* Social */}
           <div
             ref={socialRef}
             className="flex justify-center gap-4"
@@ -177,26 +166,26 @@ const Contact = () => {
                 rel={href.startsWith("mailto") ? undefined : "noopener noreferrer"}
                 className="p-3.5 rounded-full cursor-pointer transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                 style={{
-                  background: "hsla(0,0%,100%,1)",
-                  border: "1px solid hsl(220,18%,88%)",
-                  color: "hsl(220,12%,40%)",
-                  boxShadow: "0 2px 8px -2px hsla(220,20%,20%,0.08)",
+                  background: "var(--btn-ghost-bg)",
+                  border: "1px solid var(--btn-ghost-border)",
+                  color: "var(--btn-ghost-text)",
+                  boxShadow: "var(--card-shadow)",
                 }}
                 onMouseEnter={(e) => {
                   const el = e.currentTarget;
-                  el.style.background = "hsla(250,70%,50%,0.08)";
-                  el.style.borderColor = "hsla(250,70%,50%,0.4)";
-                  el.style.color = "hsl(250,70%,40%)";
+                  el.style.background = "var(--btn-ghost-bg-hover)";
+                  el.style.borderColor = "var(--btn-ghost-border-hover)";
+                  el.style.color = "var(--btn-ghost-text-hover)";
                   el.style.transform = "translateY(-3px)";
-                  el.style.boxShadow = "0 8px 20px -4px hsla(250,70%,50%,0.20)";
+                  el.style.boxShadow = "0 8px 20px -4px hsla(250,70%,55%,0.22)";
                 }}
                 onMouseLeave={(e) => {
                   const el = e.currentTarget;
-                  el.style.background = "hsla(0,0%,100%,1)";
-                  el.style.borderColor = "hsl(220,18%,88%)";
-                  el.style.color = "hsl(220,12%,40%)";
+                  el.style.background = "var(--btn-ghost-bg)";
+                  el.style.borderColor = "var(--btn-ghost-border)";
+                  el.style.color = "var(--btn-ghost-text)";
                   el.style.transform = "translateY(0)";
-                  el.style.boxShadow = "0 2px 8px -2px hsla(220,20%,20%,0.08)";
+                  el.style.boxShadow = "var(--card-shadow)";
                 }}
               >
                 {icon}
@@ -204,21 +193,14 @@ const Contact = () => {
             ))}
           </div>
 
-          {/* Footer note */}
-          <p
-            className="text-sm mt-10"
-            style={{ color: "hsl(220,12%,58%)" }}
-          >
+          <p className="text-sm mt-10" style={{ color: "var(--text-subtle)" }}>
             © {new Date().getFullYear()} Tran Chi Tho — Built with React & Tailwind CSS
           </p>
         </div>
       </section>
 
       {showCalendly && (
-        <CalendlyWidget
-          url="https://calendly.com/tranchitho160704"
-          onClose={() => setShowCalendly(false)}
-        />
+        <CalendlyWidget url="https://calendly.com/tranchitho160704" onClose={() => setShowCalendly(false)} />
       )}
     </>
   );

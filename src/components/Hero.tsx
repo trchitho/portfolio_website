@@ -70,40 +70,38 @@ const Hero = () => {
   return (
     <section
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      style={{ background: "var(--surface-page)" }}
       aria-label="Hero section"
     >
-      {/* ── Background ──────────────────────────────────────── */}
+      {/* Background */}
       <div className="absolute inset-0 bg-gradient-hero" aria-hidden="true">
-        {/* subtle photo texture */}
         <div
           className="absolute inset-0 opacity-[0.04] bg-cover bg-center"
           style={{ backgroundImage: `url(${heroBackground})` }}
         />
       </div>
 
-      {/* Soft dot grid */}
+      {/* Dot grid */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage:
-            "radial-gradient(circle, hsla(250,60%,50%,0.12) 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(circle, hsla(250,60%,50%,0.10) 1px, transparent 1px)",
           backgroundSize: "28px 28px",
         }}
         aria-hidden="true"
       />
 
-      {/* Floating particles */}
+      {/* Particles */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
         {PARTICLES.map((p) => (
           <span
             key={p.id}
-            className="absolute rounded-full"
+            className="absolute rounded-full bg-primary"
             style={{
               left: `${p.x}%`,
               top: `${p.y}%`,
               width: p.size,
               height: p.size,
-              background: "hsl(250,70%,50%)",
               opacity: p.opacity,
               animation: `float ${p.duration}s ease-in-out ${p.delay}s infinite`,
             }}
@@ -129,7 +127,7 @@ const Hero = () => {
         aria-hidden="true"
       />
 
-      {/* ── Content ─────────────────────────────────────────── */}
+      {/* Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-12">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[80vh]">
 
@@ -141,9 +139,9 @@ const Hero = () => {
               <span
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold border select-none"
                 style={{
-                  background: "hsla(250,70%,50%,0.08)",
-                  borderColor: "hsla(250,70%,50%,0.28)",
-                  color: "hsl(250,70%,42%)",
+                  background: "var(--badge-bg)",
+                  borderColor: "var(--badge-border)",
+                  color: "var(--badge-text)",
                 }}
               >
                 <span className="relative flex h-2 w-2" aria-hidden="true">
@@ -159,9 +157,7 @@ const Hero = () => {
               className="font-bold leading-[1.08] tracking-tight mb-5"
               style={{ fontSize: "clamp(3rem, 8vw, 5.5rem)", ...stagger(0.15) }}
             >
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
-                Tran
-              </span>{" "}
+              <span className="bg-gradient-primary bg-clip-text text-transparent">Tran</span>{" "}
               <span className="text-foreground">Chi Tho</span>
             </h1>
 
@@ -172,7 +168,7 @@ const Hero = () => {
                 style={{ background: "var(--gradient-primary)" }}
                 aria-hidden="true"
               />
-              <p className="text-lg md:text-xl font-semibold tracking-wide" style={{ color: "hsl(250,70%,45%)" }}>
+              <p className="text-lg md:text-xl font-semibold tracking-wide" style={{ color: "var(--text-role)" }}>
                 Building full-stack products that ship
               </p>
             </div>
@@ -181,7 +177,7 @@ const Hero = () => {
             <div
               className="text-base md:text-lg mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed"
               style={{
-                color: "hsl(220,12%,38%)",
+                color: "var(--text-body)",
                 opacity: isVisible ? 1 : 0,
                 transition: "opacity 0.8s ease-out 0.35s",
               }}
@@ -226,12 +222,8 @@ const Hero = () => {
                 { value: "1+", label: "Year Learning" },
               ].map(({ value, label }) => (
                 <div key={label} className="text-center lg:text-left">
-                  <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-                    {value}
-                  </div>
-                  <div className="text-xs whitespace-nowrap mt-0.5" style={{ color: "hsl(220,12%,48%)" }}>
-                    {label}
-                  </div>
+                  <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">{value}</div>
+                  <div className="text-xs whitespace-nowrap mt-0.5" style={{ color: "var(--text-muted)" }}>{label}</div>
                 </div>
               ))}
             </div>
@@ -286,12 +278,12 @@ const Hero = () => {
         onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
         aria-label="Scroll to projects"
       >
-        <span className="text-[10px] tracking-[0.2em] uppercase" style={{ color: "hsl(220,12%,55%)" }}>
+        <span className="text-[10px] tracking-[0.2em] uppercase" style={{ color: "var(--text-subtle)" }}>
           Scroll
         </span>
         <div
-          className="w-[22px] h-9 rounded-full flex justify-center pt-1.5 transition-colors duration-200 group-hover:border-primary/50"
-          style={{ border: "1px solid hsla(220,12%,55%,0.35)" }}
+          className="w-[22px] h-9 rounded-full flex justify-center pt-1.5 transition-colors duration-200"
+          style={{ border: "1px solid var(--border-card)" }}
         >
           <div className="w-1 h-2 bg-primary rounded-full animate-bounce" style={{ animationDuration: "1.4s" }} aria-hidden="true" />
         </div>
@@ -315,11 +307,7 @@ const HeroButton = ({ variant, children, ...props }: HeroButtonProps) => {
       <a
         {...props}
         className={base}
-        style={{
-          background: "var(--gradient-primary)",
-          color: "#fff",
-          boxShadow: "0 4px 18px hsla(250,70%,50%,0.32)",
-        }}
+        style={{ background: "var(--gradient-primary)", color: "#fff", boxShadow: "0 4px 18px hsla(250,70%,50%,0.32)" }}
         onMouseEnter={(e) => {
           e.currentTarget.style.transform = "translateY(-2px)";
           e.currentTarget.style.boxShadow = "0 8px 28px hsla(250,70%,50%,0.46)";
@@ -339,18 +327,18 @@ const HeroButton = ({ variant, children, ...props }: HeroButtonProps) => {
       {...props}
       className={base}
       style={{
-        background: "hsla(250,70%,50%,0.06)",
-        border: "1px solid hsla(250,70%,50%,0.25)",
-        color: "hsl(250,70%,42%)",
+        background: "var(--badge-bg)",
+        border: "1px solid var(--badge-border)",
+        color: "var(--badge-text)",
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.background = "hsla(250,70%,50%,0.12)";
-        e.currentTarget.style.borderColor = "hsla(250,70%,50%,0.5)";
+        e.currentTarget.style.background = "var(--btn-ghost-bg-hover)";
+        e.currentTarget.style.borderColor = "var(--btn-ghost-border-hover)";
         e.currentTarget.style.transform = "translateY(-2px)";
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.background = "hsla(250,70%,50%,0.06)";
-        e.currentTarget.style.borderColor = "hsla(250,70%,50%,0.25)";
+        e.currentTarget.style.background = "var(--badge-bg)";
+        e.currentTarget.style.borderColor = "var(--badge-border)";
         e.currentTarget.style.transform = "translateY(0)";
       }}
     >
@@ -369,27 +357,26 @@ const SocialLink = ({ href, label, children }: SocialLinkProps) => (
     rel={href.startsWith("mailto") ? undefined : "noopener noreferrer"}
     className="p-2.5 rounded-xl cursor-pointer transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
     style={{
-      background: "hsla(0,0%,100%,0.7)",
-      border: "1px solid hsla(250,60%,50%,0.18)",
+      background: "var(--btn-ghost-bg)",
+      border: "1px solid var(--btn-ghost-border)",
       backdropFilter: "blur(8px)",
-      color: "hsl(220,12%,42%)",
-      boxShadow: "0 1px 4px hsla(220,20%,30%,0.07)",
+      color: "var(--btn-ghost-text)",
     }}
     onMouseEnter={(e) => {
       const el = e.currentTarget;
-      el.style.borderColor = "hsla(250,70%,50%,0.5)";
-      el.style.background = "hsla(250,70%,50%,0.08)";
+      el.style.borderColor = "var(--btn-ghost-border-hover)";
+      el.style.background = "var(--btn-ghost-bg-hover)";
       el.style.transform = "translateY(-3px)";
       el.style.boxShadow = "0 6px 16px hsla(250,70%,50%,0.18)";
-      el.style.color = "hsl(250,70%,42%)";
+      el.style.color = "var(--btn-ghost-text-hover)";
     }}
     onMouseLeave={(e) => {
       const el = e.currentTarget;
-      el.style.borderColor = "hsla(250,60%,50%,0.18)";
-      el.style.background = "hsla(0,0%,100%,0.7)";
+      el.style.borderColor = "var(--btn-ghost-border)";
+      el.style.background = "var(--btn-ghost-bg)";
       el.style.transform = "translateY(0)";
-      el.style.boxShadow = "0 1px 4px hsla(220,20%,30%,0.07)";
-      el.style.color = "hsl(220,12%,42%)";
+      el.style.boxShadow = "none";
+      el.style.color = "var(--btn-ghost-text)";
     }}
   >
     {children}
