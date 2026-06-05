@@ -3,22 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <title>Tran Chi Tho — Portfolio</title>
-    <!--
-      GitHub Pages SPA redirect script.
-      When a user navigates directly to a sub-path (e.g. /portfolio_website/about),
-      GitHub Pages returns a 404. This script redirects back to index.html
-      while preserving the path in sessionStorage so the React Router can restore it.
-    -->
     <script>
-      var pathSegmentsToKeep = 1; // number of path segments for the repo base (/portfolio_website)
-      var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
+      // GitHub Pages SPA fallback
+      // Saves current path to sessionStorage, then redirects to index.html
+      sessionStorage.setItem('redirect', location.href);
+      location.replace(location.origin + '/portfolio_website/');
     </script>
   </head>
   <body></body>

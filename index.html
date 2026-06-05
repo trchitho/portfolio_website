@@ -8,18 +8,16 @@
   <meta name="description"
     content="Fullstack Developer specializing in React, Node.js, TypeScript, and modern web technologies. Creating beautiful, performant web applications." />
   <meta name="author" content="Tran Chi Tho" />
-  <!-- GitHub Pages SPA: restore path redirected from 404.html -->
+  <!-- GitHub Pages SPA: restore URL saved by 404.html -->
   <script>
-    (function(l) {
-      if (l.search[1] === '/') {
-        var decoded = l.search.slice(1).split('&').map(function(s) {
-          return s.replace(/~and~/g, '&');
-        }).join('?');
-        window.history.replaceState(null, null,
-          l.pathname.slice(0, -1) + decoded + l.hash
-        );
+    (function () {
+      var redirect = sessionStorage.getItem('redirect');
+      if (redirect) {
+        sessionStorage.removeItem('redirect');
+        // Replace current history entry so back-button works correctly
+        window.history.replaceState(null, '', redirect);
       }
-    }(window.location));
+    })();
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
