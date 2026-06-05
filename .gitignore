@@ -91,3 +91,7 @@ temp/
 # OS generated files
 Thumbs.db
 package-lock.json
+
+# Kiro IDE
+.kiro/
+.vercel
