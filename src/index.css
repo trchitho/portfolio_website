@@ -73,7 +73,39 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* ── Scroll reveal utility ─────────────────────────────────────── */
+@layer utilities {
+  .reveal-hidden {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  .reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.65s ease-out, transform 0.65s ease-out;
+  }
+}
+
+/* ── Respect reduced motion ────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
   }
 }
