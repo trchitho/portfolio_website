@@ -66,8 +66,8 @@ const ProjectCard = ({ project, index }: { project: typeof PROJECTS[number]; ind
       ref={ref}
       role="link"
       tabIndex={0}
-      aria-label={`Open ${project.title} on GitHub Pages`}
-      className="group relative rounded-2xl overflow-hidden cursor-pointer min-w-0"
+      aria-label={`Open ${project.title} live demo`}
+      className="group relative rounded-2xl overflow-hidden cursor-pointer min-w-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
       style={{
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? "translateY(0) scale(1)" : "translateY(32px) scale(0.97)",
@@ -125,7 +125,7 @@ const ProjectCard = ({ project, index }: { project: typeof PROJECTS[number]; ind
           <QuickAction href={project.github} label={`Source code – ${project.title}`} hue={h}>
             <Github className="h-4 w-4" aria-hidden="true" />
           </QuickAction>
-          <QuickAction href={project.live} label={`GitHub Pages – ${project.title}`} hue={h}>
+          <QuickAction href={project.live} label={`Live demo – ${project.title}`} hue={h}>
             <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
           </QuickAction>
         </div>
@@ -182,7 +182,7 @@ const ProjectCard = ({ project, index }: { project: typeof PROJECTS[number]; ind
             href={project.live}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`View GitHub Pages site – ${project.title}`}
+            aria-label={`View live demo – ${project.title}`}
             className="min-[420px]:ml-auto inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg text-sm font-semibold cursor-pointer transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary text-white"
             style={{
               background: "var(--gradient-primary)",
@@ -198,7 +198,7 @@ const ProjectCard = ({ project, index }: { project: typeof PROJECTS[number]; ind
               e.currentTarget.style.boxShadow = `0 3px 12px -3px hsla(${h},65%,50%,0.38)`;
             }}
           >
-            GitHub Pages
+            Live Demo
             <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
           </a>
         </div>
