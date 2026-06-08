@@ -266,7 +266,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             Source
           </a>
 
-          {/* Live Demo or WIP */}
+          {/* Live Demo */}
           {project.live ? (
             <a
               href={project.live}
@@ -290,14 +290,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
               Live Demo
               <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
             </a>
-          ) : (
-            <span
-              className="ml-auto text-xs italic"
-              style={{ color: "var(--text-subtle)" }}
-            >
-              Private / WIP
-            </span>
-          )}
+          ) : null}
         </div>
       </div>
     </div>
