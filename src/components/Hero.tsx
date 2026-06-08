@@ -217,7 +217,7 @@ const Hero = () => {
             {/* Stats */}
             <div className="mt-8 sm:mt-10 grid grid-cols-3 gap-3 sm:flex sm:justify-center lg:justify-start sm:gap-8" style={stagger(0.7)}>
               {[
-                { value: "4+", label: "Projects Built" },
+                { value: "6+", label: "Projects Built" },
                 { value: "3+", label: "Tech Stacks" },
                 { value: "1+", label: "Year Learning" },
               ].map(({ value, label }) => (
