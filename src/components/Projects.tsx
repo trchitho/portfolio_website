@@ -182,7 +182,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
           className="absolute bottom-3 left-3 flex gap-2 transition-all duration-300"
           style={{
             opacity: hovered ? 1 : 0,
-            transform: hovered ? "translateY(0)" : "translateY(8px)",
+            transform: hovered ? "translateY(0)" : "translateY(6px)",
           }}
         >
           <a
@@ -190,18 +190,21 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`View README – ${project.title}`}
-            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold cursor-pointer transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold cursor-pointer transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             style={{
-              background: "var(--btn-ghost-bg)",
-              backdropFilter: "blur(8px)",
-              border: `1px solid hsla(${h},65%,55%,0.30)`,
-              color: `hsl(${h},65%,var(--badge-chip-l, 55%))`,
+              background: "hsla(0,0%,0%,0.55)",
+              backdropFilter: "blur(10px)",
+              border: `1px solid hsla(${h},65%,70%,0.35)`,
+              color: `hsl(${h},70%,82%)`,
+              boxShadow: "0 2px 8px hsla(0,0%,0%,0.25)",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = `hsla(${h},65%,55%,0.20)`;
+              e.currentTarget.style.background = `hsla(${h},65%,45%,0.55)`;
+              e.currentTarget.style.transform = "translateY(-1px)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = "var(--btn-ghost-bg)";
+              e.currentTarget.style.background = "hsla(0,0%,0%,0.55)";
+              e.currentTarget.style.transform = "translateY(0)";
             }}
             onClick={(e) => e.stopPropagation()}
           >
