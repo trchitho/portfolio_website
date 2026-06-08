@@ -104,14 +104,14 @@ const TypeBadge = ({ type }: { type: ProjectType }) => (
     style={
       type === "team"
         ? {
-            background: "hsla(38,95%,55%,0.18)",
-            border: "1px solid hsla(38,95%,55%,0.40)",
-            color: "hsl(38,95%,38%)",
+            background: "hsla(38,95%,55%,0.15)",
+            border: "1px solid hsla(38,95%,55%,0.38)",
+            color: "hsl(38,80%,var(--badge-chip-l, 38%))",
           }
         : {
-            background: "hsla(142,60%,45%,0.14)",
-            border: "1px solid hsla(142,60%,45%,0.35)",
-            color: "hsl(142,60%,30%)",
+            background: "hsla(142,60%,45%,0.12)",
+            border: "1px solid hsla(142,60%,45%,0.32)",
+            color: "hsl(142,55%,var(--badge-chip-l, 30%))",
           }
     }
   >
