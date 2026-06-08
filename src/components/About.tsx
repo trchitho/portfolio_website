@@ -6,7 +6,7 @@ const quickFacts = [
   { label: "Experience", value: "Academic & Personal Projects" },
   { label: "Specialty",  value: "Java / Spring Boot" },
   { label: "Projects",   value: "6+ Completed" },
-  { label: "Education",  value: "DUT – Da Nang University" },
+  { label: "Education",  value: "DTU – Duy Tan University" },
   { label: "Location",   value: "Da Nang, Vietnam" },
   { label: "Status",     value: "Available", highlight: true },
 ];
