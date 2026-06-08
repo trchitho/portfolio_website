@@ -190,7 +190,8 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`View README – ${project.title}`}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold cursor-pointer transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            title={`README - ${project.title}`}
+            className="inline-flex h-9 w-9 items-center justify-center rounded-lg cursor-pointer transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             style={{
               background: "hsla(0,0%,0%,0.55)",
               backdropFilter: "blur(10px)",
@@ -208,8 +209,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             }}
             onClick={(e) => e.stopPropagation()}
           >
-            <BookOpen className="h-3.5 w-3.5" aria-hidden="true" />
-            README
+            <BookOpen className="h-4 w-4" aria-hidden="true" />
           </a>
         </div>
       </div>
