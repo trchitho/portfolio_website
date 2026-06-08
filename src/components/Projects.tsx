@@ -127,10 +127,15 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
   });
   const [hovered, setHovered] = useState(false);
   const h = project.accentHue;
+  const openReadme = () => {
+    window.open(project.readme, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <div
       ref={ref}
+      role="link"
+      tabIndex={0}
       className="group relative rounded-2xl overflow-hidden cursor-pointer"
       style={{
         opacity: isVisible ? 1 : 0,
@@ -139,6 +144,13 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
         background: "var(--surface-card)",
         border: `1px solid ${hovered ? `hsla(${h},65%,55%,0.40)` : "var(--border-card)"}`,
         boxShadow: hovered ? "var(--card-shadow-hover)" : "var(--card-shadow)",
+      }}
+      onClick={openReadme}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          openReadme();
+        }
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -261,6 +273,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             style={{ color: "var(--text-muted)" }}
             onMouseEnter={(e) => { e.currentTarget.style.color = "var(--foreground)"; }}
             onMouseLeave={(e) => { e.currentTarget.style.color = "var(--text-muted)"; }}
+            onClick={(e) => e.stopPropagation()}
           >
             <Github className="h-4 w-4" aria-hidden="true" />
             Source
@@ -286,6 +299,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
                 e.currentTarget.style.transform = "translateY(0)";
                 e.currentTarget.style.boxShadow = `0 3px 12px -3px hsla(${h},65%,50%,0.38)`;
               }}
+              onClick={(e) => e.stopPropagation()}
             >
               Live Demo
               <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
