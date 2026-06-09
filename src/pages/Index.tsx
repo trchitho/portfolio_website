@@ -8,12 +8,17 @@ import Contact from "@/components/Contact";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
       <Navigation />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
+      <main id="main-content" tabIndex={-1}>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
     </div>
   );
 };
