@@ -13,6 +13,14 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsMobileMenuOpen(false);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
     setIsMobileMenuOpen(false);
@@ -105,6 +113,7 @@ const Navigation = () => {
               style={{ color: "var(--nav-link-color)" }}
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-navigation"
             >
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -114,6 +123,9 @@ const Navigation = () => {
         {/* Mobile menu */}
         {isMobileMenuOpen && (
           <div
+            id="mobile-navigation"
+            role="navigation"
+            aria-label="Mobile navigation"
             className="md:hidden mt-3 py-4 rounded-2xl"
             style={{
               background: "var(--nav-mobile-bg)",
