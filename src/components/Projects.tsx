@@ -154,6 +154,8 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onFocus={() => setHovered(true)}
+      onBlur={() => setHovered(false)}
     >
       {/* Category badge — top left */}
       <div className="absolute top-3 left-3 z-20">
